@@ -214,6 +214,64 @@
       .project-info { left: 22px; right: 22px; bottom: 22px; min-height: 210px; }
       .project-card, .project-card.small { min-height: 360px; }
     }
+  
+    /* Finaler Feinschliff: Kontakt-Titel und Projekt-Label-Ausrichtung */
+    .contact-title {
+      max-width: 980px !important;
+      font-size: clamp(1.85rem, 2.65vw, 3rem) !important;
+      line-height: 1.14 !important;
+      letter-spacing: -0.035em !important;
+    }
+
+    .projects .project-card {
+      min-height: 470px;
+    }
+
+    .projects .project-info {
+      top: 145px !important;
+      bottom: 30px !important;
+      min-height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
+
+    .projects .project-info .tag {
+      margin-bottom: 18px !important;
+    }
+
+    .projects .project-info h3 {
+      min-height: 2.25em;
+    }
+
+    @media (max-width: 1100px) {
+      .projects .project-info {
+        top: 135px !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .contact-title br {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .projects .project-card {
+        min-height: 430px;
+      }
+
+      .projects .project-info {
+        top: 118px !important;
+        bottom: 22px !important;
+      }
+
+      .projects .project-info h3 {
+        min-height: auto;
+      }
+    }
+
   </style>
 </head>
 
@@ -263,86 +321,10 @@
       <div class="container about-grid">
         <div>
           <p class="section-kicker"><span class="lang-de">Über Buhlvest</span><span class="lang-en">About Buhlvest</span></p>
-          <h2 class="section-title"><span class="lang-de">Qualität, Substanz und langfristiger Wert.</span><span class="lang-en">Quality, substance and long-term value.</span></h2>
-          <p class="section-text"><span class="lang-de">Seit über 20 Jahren entwickelt Buhlvest hochwertige Gewerbe-Immobilien im Großraum München. Unser Schwerpunkt liegt auf modernen und multifunktionalen Gewerbehallen, die durch eine durchdachte Planung, hochwertige Bauqualität und flexible Nutzungsmöglichkeiten überzeugen.
-Dabei betrachten wir Immobilien nicht als kurzfristige Projekte, sondern als langfristige Werte. Nachhaltige Konzepte, funktionale Architektur und die individuellen Anforderungen unserer Kunden stehen deshalb von Beginn an im Mittelpunkt.
-Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und auch in Zukunft flexibel und zuverlässig genutzt werden können.</span><span class="lang-en">For more than 20 years, Buhlvest has been developing high-quality commercial properties across the greater Munich area. Our focus is on modern, multifunctional commercial buildings that combine thoughtful planning, high construction quality and flexible usage options. We do not view real estate as a short-term project, but as a long-term asset. Sustainable concepts, functional architecture and the individual requirements of our clients are therefore at the heart of every development from the very beginning. Our aim is to create commercial properties that meet today’s demands while remaining flexible, reliable and fit for future use.</span></p>
-          <div class="stats">
-            <div class="stat"><strong>20+</strong><span><span class="lang-de">Jahre Erfahrung</span><span class="lang-en">Years of experience</span></span></div>
-            <div class="stat"><strong>MUC</strong><span><span class="lang-de">Fokus München</span><span class="lang-en">Munich focus</span></span></div>
-            <div class="stat"><strong>360°</strong><span><span class="lang-de">Von der Standortentwicklung bis zur schlüsselfertigen Gewerbeimmobilie</span><span class="lang-en">From site development to a turnkey commercial property</span></span></div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15l3-3 3 2 5-7" /><path d="M17 7h2v2" /></svg>
-          </div>
-          <h3><span class="lang-de">Was Buhlvest auszeichnet</span><span class="lang-en">What defines Buhlvest</span></h3>
-          <p class="section-text"><span class="lang-de">Unser Fokus liegt auf Gewerbe-Immobilien, die funktional geplant, hochwertig umgesetzt und langfristig nutzbar sind.</span><span class="lang-en">Our focus is on commercial properties that are functionally planned, built to a high standard and designed for long-term use.</span></p>
-          <ul class="about-highlights">
-            <li><span class="lang-de">Moderne und multifunktionale Gewerbeflächen</span><span class="lang-en">Modern and multifunctional commercial spaces</span></li>
-            <li><span class="lang-de">Flexible Nutzung für unterschiedliche Anforderungen</span><span class="lang-en">Flexible use for different requirements</span></li>
-            <li><span class="lang-de">Langfristiger Wert durch Qualität und Substanz</span><span class="lang-en">Long-term value through quality and substance</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="services" id="services">
-      <div class="container">
-        <p class="section-kicker"><span class="lang-de">Unsere Leistungen</span><span class="lang-en">Our Services</span></p>
-        <h2 class="section-title"><span class="lang-de">Gewerbe-Immobilien durchdacht entwickelt.</span><span class="lang-en">Thoughtfully developed Commercial properties.</span></h2>
-        <p class="section-text"><span class="lang-de">Wir errichten Gewerbe-Immobilien von der ersten Konzeption bis zur fertigen, nutzbaren Lösung. Mit effizienter Planung, hochwertigen Materialien und einem klaren Blick für die Anforderungen unserer Kunden entstehen flexible und langfristig nutzbare Gewerbeobjekte.</span><span class="lang-en">We manage our projects from the initial concept through to the completed property. Efficient planning, high-quality materials and a clear understanding of our clients’ requirements enable us to create flexible commercial properties designed for long-term use.</span></p>
-        <div class="cards">
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8l6 6v12" /><path d="M14 3v6h6" /><path d="M8 13h8M8 17h8" /></svg></div><h3><span class="lang-de">Projektentwicklung</span><span class="lang-en">Project Development</span></h3><p><span class="lang-de">Analyse, Konzeption und Entwicklung hochwertiger Gewerbestandorte mit Fokus auf Nutzbarkeit, Wertstabilität und Marktfähigkeit.</span><span class="lang-en">Analysis, concept and development of premium commercial locations with a focus on usability, value stability and marketability.</span></p></article>
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18" /><path d="M6 21V7h12v14" /><path d="M9 21v-5h6v5" /><path d="M8 10h2M14 10h2M8 13h2M14 13h2" /></svg></div><h3><span class="lang-de">Baumanagement</span><span class="lang-en">Construction Management</span></h3><p><span class="lang-de">Koordination, Qualitätskontrolle und Umsetzung anspruchsvoller Bauprojekte mit klarer Struktur und professioneller Steuerung.</span><span class="lang-en">Coordination, quality control and execution of demanding construction projects with clear structures and professional management.</span></p></article>
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15l3-3 3 2 5-7" /><path d="M17 7h2v2" /></svg></div><h3><span class="lang-de">Vertrieb</span><span class="lang-en">Sales & Leasing</span></h3><p><span class="lang-de">Positionierung und Vermarktung ausgewählter Gewerbeflächen für Käufer, Mieter und Investoren im nationalen und internationalen Umfeld.</span><span class="lang-en">Positioning and marketing of selected commercial spaces for buyers, tenants and investors in national and international markets.</span></p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="projects-head">
-          <div><p class="section-kicker"><span class="lang-de">Referenzen & Projekte</span><span class="lang-en">Project Portfolio</span></p><h2 class="section-title"><span class="lang-de">Ausgewählte Gewerbe-Immobilien.</span><span class="lang-en">Selected commercial properties.</span></h2></div>
-          <p class="section-text"><span class="lang-de">Einblicke in moderne, hochwertig realisierte Gewerbeimmobilien von Buhlvest.</span><span class="lang-en">Explore modern, high-quality commercial properties developed by Buhlvest.</span></p>
-        </div>
-        <div class="gallery">
-          <a class="project-card" href="projekt-1.html" aria-label="Referenzprojekt 1 öffnen">
-            <img src="hero.jpg" alt="Moderne Gewerbe-Immobilie von Buhlvest" />
-            <div class="project-info">
-              <span class="tag"><span class="lang-de">Referenzprojekt 1</span><span class="lang-en">Featured Project 1</span></span>
-              <h3><span class="lang-de">Moderne Gewerbeflächen in Putzbrunn bei München</span><span class="lang-en">Modern Commercial Spaces in Putzbrunn near Munich</span></h3>
-              <p><span class="lang-de">Repräsentative Architektur, flexible Nutzflächen und hochwertige Ausführung für anspruchsvolle gewerbliche Nutzung.</span><span class="lang-en">Representative architecture, flexible usable space and high-quality execution for demanding commercial use.</span></p>
-            </div>
-          </a>
-
-          <a class="project-card" href="projekt-2.html" aria-label="Referenzprojekt 2 öffnen">
-            <img src="hero.jpg" alt="Weiteres Referenzprojekt von Buhlvest" />
-            <div class="project-info">
-              <span class="tag"><span class="lang-de">Referenzprojekt 2</span><span class="lang-en">Featured Project 2</span></span>
-              <h3><span class="lang-de">Weitere Gewerbeimmobilie im Großraum München</span><span class="lang-en">Additional Commercial Property in the Greater Munich Area</span></h3>
-              <p><span class="lang-de">Hier können später Projektbild, Standort, Flächenangaben und weitere Details zum zweiten Referenzprojekt ergänzt werden.</span><span class="lang-en">Project image, location, floor area and further details for the second reference project can be added here later.</span></p>
-            </div>
-          </a>
-
-          <a class="project-card" href="projekt-3.html" aria-label="Geplantes Projekt 3 öffnen">
-            <img src="hero.jpg" alt="Geplantes Gewerbeprojekt von Buhlvest" />
-            <div class="project-info">
-              <span class="tag"><span class="lang-de">Geplantes Projekt 3</span><span class="lang-en">Planned Project 3</span></span>
-              <h3><span class="lang-de">Geplantes Gewerbeprojekt</span><span class="lang-en">Planned Commercial Development</span></h3>
-              <p><span class="lang-de">Ein geplanter Standort für zukünftige gewerbliche Nutzung. Weitere Informationen können nach Projektfortschritt ergänzt werden.</span><span class="lang-en">A planned location for future commercial use. Further information can be added as the project progresses.</span></p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <p class="section-kicker"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></p>
-          <h2 class="section-title"><span class="lang-de">Gerne informieren wir Sie persönlich über unsere Gewerbeimmobilien, verfügbaren Flächen und geplanten Projekte.</span><span class="lang-en">We would be pleased to provide you with further information about our commercial properties, available spaces and upcoming projects.</span></h2>
+          <h2 class="section-title contact-title">
+            <span class="lang-de">Gerne informieren wir Sie persönlich über unsere<br>Gewerbeimmobilien, verfügbaren Flächen und geplanten Projekte.</span>
+            <span class="lang-en">We would be pleased to provide you with further information about our<br>commercial properties, available spaces and upcoming projects.</span>
+          </h2>
           <p class="section-text"><span class="lang-de">Ob Kauf, Miete oder Investment – wir freuen uns auf Ihre Anfrage.</span><span class="lang-en">Whether acquisition, leasing or investment — we look forward to your enquiry.</span></p>
           <div class="contact-details">
             <div class="detail"><strong><span class="lang-de">Adresse</span><span class="lang-en">Address</span></strong><span>Karwendelstr. 16, 82024 Taufkirchen (Landkreis München)</span></div>
