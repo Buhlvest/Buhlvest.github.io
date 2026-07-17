@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buhlvest – Hochwertige Gewerbe-Immobilien</title>
+  <meta name="description" content="Buhlvest entwickelt hochwertige Gewerbe-Immobilienprojekte in und um München für Käufer, Mieter und Investoren weltweit." />
+  <style>
+    :root {
+      --navy: #07111f;
+      --navy-2: #0b1829;
+      --navy-3: #102238;
+      --gold: #c9a45c;
+      --gold-light: #e3c783;
+      --white: #ffffff;
+      --muted: #aeb8c5;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .lang-en { display: none; }
+    body.english .lang-de { display: none; }
+    body.english .lang-en { display: inline; }
+    body.english .block.lang-en { display: block; }
+    body.english .block.lang-de { display: none; }
+    .block.lang-en { display: none; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .site-header {
+      position: fixed; inset: 0 0 auto 0; z-index: 1000;
+      background: rgba(7, 17, 31, 0.72);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      transition: background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .site-header.scrolled { background: rgba(7, 17, 31, 0.94); box-shadow: 0 14px 45px rgba(0,0,0,0.24); }
+    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: max-content; }
+    .brand img { width: 54px; height: 54px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(201,164,92,0.28); }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--gold-light); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.92rem; color: rgba(255,255,255,0.82); }
+    .nav-links a { position: relative; transition: color 0.2s ease; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -8px; width: 0; height: 1px; background: var(--gold); transition: width 0.2s ease; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .language-toggle { display: flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 5px; background: rgba(255,255,255,0.06); }
+    .language-toggle button { border: 0; color: rgba(255,255,255,0.72); background: transparent; padding: 7px 10px; border-radius: 999px; cursor: pointer; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; }
+    .language-toggle button.active { background: var(--gold); color: #08101c; }
+    .menu-button { display: none; width: 46px; height: 46px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,0.06); color: var(--white); cursor: pointer; align-items: center; justify-content: center; }
+    .menu-button span { width: 20px; height: 2px; background: currentColor; display: block; position: relative; }
+    .menu-button span::before, .menu-button span::after { content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; }
+    .menu-button span::before { top: -7px; }
+    .menu-button span::after { top: 7px; }
+
+    .hero {
+      min-height: 100vh; position: relative; display: grid; place-items: center; text-align: center;
+      background:
+        linear-gradient(180deg, rgba(7,17,31,0.55), rgba(7,17,31,0.90)),
+        linear-gradient(90deg, rgba(7,17,31,0.85), rgba(7,17,31,0.18), rgba(7,17,31,0.86)),
+        url("hero.jpg") center / cover no-repeat;
+      overflow: hidden;
+    }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 38%, rgba(201,164,92,0.20), transparent 34%), radial-gradient(circle at 12% 85%, rgba(255,255,255,0.08), transparent 30%); pointer-events: none; }
+    .hero-content { position: relative; padding: 150px 0 90px; max-width: 980px; }
+    .eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.78rem; font-weight: 800; margin-bottom: 26px; }
+    .eyebrow::before, .eyebrow::after { content: ""; width: 42px; height: 1px; background: rgba(201,164,92,0.72); }
+    .hero-logo { width: 148px; height: 148px; object-fit: cover; border-radius: 26px; margin: 0 auto 30px; box-shadow: var(--shadow); border: 1px solid rgba(201,164,92,0.38); }
+    h1 { font-size: clamp(2.6rem, 6vw, 6.8rem); line-height: 0.98; letter-spacing: -0.055em; margin-bottom: 26px; }
+    .hero-title .lang-de,
+    .hero-title .lang-en { width: 100%; }
+    body:not(.english) .hero-title .lang-de { display: block; }
+    body.english .hero-title .lang-en { display: block; }
+    .hero-main { display: block; }
+    .hero-subline {
+      display: block;
+      margin-top: 14px;
+      font-size: 0.42em;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      color: var(--gold-light);
+    }
+    .hero-subtitle { color: rgba(255,255,255,0.84); font-size: clamp(1.05rem, 2vw, 1.42rem); max-width: 760px; margin: 0 auto 42px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(201,164,92,0.75); border-radius: 999px; padding: 15px 25px; font-weight: 800; letter-spacing: 0.02em; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #07111f; box-shadow: 0 18px 35px rgba(201,164,92,0.24); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 24px 46px rgba(201,164,92,0.32); }
+
+    section { padding: 110px 0; }
+    .section-kicker { color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.18em; font-weight: 800; font-size: 0.78rem; margin-bottom: 16px; }
+    .section-title { font-size: clamp(2rem, 4vw, 4rem); line-height: 1.05; letter-spacing: -0.045em; margin-bottom: 24px; }
+    .section-text { color: var(--muted); max-width: 720px; font-size: 1.06rem; }
+
+    .about { background: linear-gradient(180deg, var(--navy), var(--navy-2)); border-top: 1px solid var(--line); }
+    .about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+    .about-card { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); border-radius: var(--radius); padding: 38px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .about-card::after { content: ""; position: absolute; width: 220px; height: 220px; right: -70px; bottom: -90px; background: rgba(201,164,92,0.14); border-radius: 50%; filter: blur(2px); }
+    .about-icon { width: 86px; height: 86px; border-radius: 24px; display: grid; place-items: center; background: rgba(201,164,92,0.12); border: 1px solid rgba(201,164,92,0.30); color: var(--gold-light); margin-bottom: 28px; }
+    .about-highlights { list-style: none; display: grid; gap: 14px; margin-top: 24px; color: var(--muted); }
+    .about-highlights li { display: flex; gap: 12px; align-items: flex-start; }
+    .about-highlights li::before { content: ""; flex: 0 0 9px; width: 9px; height: 9px; margin-top: 10px; border-radius: 999px; background: var(--gold-light); box-shadow: 0 0 0 5px rgba(201,164,92,0.10); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
+    .stat { border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: rgba(255,255,255,0.04); }
+    .stat strong { color: var(--gold-light); font-size: 1.75rem; line-height: 1; }
+    .stat > span { display: block; color: var(--muted); font-size: 0.86rem; margin-top: 8px; }
+    .stat .lang-en { display: none; margin-top: 0; }
+    body.english .stat .lang-de { display: none; }
+    body.english .stat .lang-en { display: inline; }
+
+    .services { background: radial-gradient(circle at 15% 0%, rgba(201,164,92,0.12), transparent 32%), var(--navy-2); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 54px; }
+    .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.03)); transition: transform 0.22s ease, border-color 0.22s ease; min-height: 260px; }
+    .card:hover { transform: translateY(-6px); border-color: rgba(201,164,92,0.42); }
+    .icon { width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center; background: rgba(201,164,92,0.12); border: 1px solid rgba(201,164,92,0.26); color: var(--gold-light); margin-bottom: 26px; }
+    .card h3 { font-size: 1.35rem; margin-bottom: 12px; }
+    .card p { color: var(--muted); }
+
+    .projects { background: var(--navy); }
+    .projects-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 54px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .project-card { display: block; position: relative; min-height: 420px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--navy-3); box-shadow: var(--shadow); color: inherit; text-decoration: none; cursor: pointer; }
+    .project-card.small { min-height: 420px; }
+    .project-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.92); transition: transform 0.45s ease; }
+    .project-card:hover img { transform: scale(1.045); }
+    .project-card:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 4px; }
+    .project-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,17,31,0.04), rgba(7,17,31,0.88)); }
+    .project-info { position: absolute; z-index: 2; left: 30px; right: 30px; bottom: 30px; }
+    .project-info .tag { display: inline-flex; color: #07111f; background: var(--gold-light); border-radius: 999px; padding: 7px 12px; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 16px; }
+    .project-info h3 { font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.05; margin-bottom: 12px; }
+    .project-info p { color: rgba(255,255,255,0.78); max-width: 640px; }
+    .placeholder-project { display: grid; place-items: center; text-align: center; padding: 34px; background: radial-gradient(circle at 50% 25%, rgba(201,164,92,0.18), transparent 34%), linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); border: 1px dashed rgba(201,164,92,0.35); }
+    .placeholder-project h3 { color: var(--gold-light); margin-bottom: 10px; font-size: 1.55rem; }
+    .placeholder-project p { color: var(--muted); max-width: 330px; }
+
+    .contact { background: linear-gradient(180deg, var(--navy), #050b14), radial-gradient(circle at 90% 10%, rgba(201,164,92,0.14), transparent 35%); border-top: 1px solid var(--line); }
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 54px; align-items: start; }
+    .contact .section-title { font-size: clamp(2rem, 3vw, 3.15rem); line-height: 1.12; letter-spacing: -0.035em; max-width: 860px; }
+    .contact .section-text { max-width: 820px; }
+    .contact-details { margin-top: 34px; display: grid; gap: 18px; }
+    .detail { border: 1px solid var(--line); border-radius: 18px; padding: 20px; background: rgba(255,255,255,0.04); }
+    .detail strong { display: block; color: var(--gold-light); margin-bottom: 4px; }
+    .detail span, .detail a { color: var(--muted); }
+
+    .form { border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035)); box-shadow: var(--shadow); }
+    .form label { display: block; margin-bottom: 8px; color: rgba(255,255,255,0.84); font-weight: 700; font-size: 0.92rem; }
+    .form input, .form textarea { width: 100%; border: 1px solid rgba(255,255,255,0.14); background: rgba(7,17,31,0.78); color: var(--white); border-radius: 14px; padding: 15px 16px; outline: none; margin-bottom: 18px; font: inherit; transition: border-color 0.18s ease, box-shadow 0.18s ease; }
+    .form textarea { min-height: 150px; resize: vertical; }
+    .form input:focus, .form textarea:focus { border-color: rgba(201,164,92,0.78); box-shadow: 0 0 0 4px rgba(201,164,92,0.10); }
+    .form .btn { width: 100%; border: 0; cursor: pointer; font: inherit; }
+    .form-note { color: var(--muted); font-size: 0.86rem; margin-top: 14px; }
+
+    .site-footer { border-top: 1px solid var(--line); padding: 34px 0; background: #050b14; color: var(--muted); font-size: 0.92rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--gold-light); }
+    svg { width: 30px; height: 30px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+    @media (max-width: 1100px) {
+      .gallery { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 920px) {
+      .menu-button { display: inline-flex; }
+      .nav-links { position: fixed; left: 20px; right: 20px; top: 92px; display: none; flex-direction: column; align-items: stretch; padding: 22px; border-radius: 22px; background: rgba(7,17,31,0.97); border: 1px solid var(--line); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; }
+      .language-toggle { align-self: start; }
+      .about-grid, .contact-grid, .gallery { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .projects-head { display: block; }
+      .projects-head .section-text { margin-top: 14px; }
+      .stats { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .nav { height: 72px; }
+      .brand img { width: 46px; height: 46px; }
+      .brand-name { font-size: 0.9rem; letter-spacing: 0.16em; }
+      .hero-content { padding-top: 130px; }
+      .hero-logo { width: 118px; height: 118px; }
+      section { padding: 82px 0; }
+      .about-card, .form, .card { padding: 26px; }
+      .project-info { left: 22px; right: 22px; bottom: 22px; }
+      .project-card, .project-card.small { min-height: 360px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Buhlvest Startseite">
+        <img src="logo.png" alt="Buhlvest Logo" />
+        <span class="brand-name">Buhlvest</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="#home"><span class="lang-de">Startseite</span><span class="lang-en">Home</span></a>
+        <a href="#about"><span class="lang-de">Über uns</span><span class="lang-en">About</span></a>
+        <a href="#services"><span class="lang-de">Leistungen</span><span class="lang-en">Services</span></a>
+        <a href="#projects"><span class="lang-de">Projekte</span><span class="lang-en">Projects</span></a>
+        <a href="#contact"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></a>
+        <div class="language-toggle" aria-label="Sprache wechseln">
+          <button type="button" class="active" id="deBtn">DE</button>
+          <button type="button" id="enBtn">EN</button>
+        </div>
+      </nav>
+      <button class="menu-button" id="menuButton" aria-label="Menü öffnen" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <img class="hero-logo" src="logo.png" alt="Buhlvest Logo" />
+        <div class="eyebrow"><span class="lang-de">Gewerbe-Immobilien München</span><span class="lang-en">Commercial Real Estate Munich</span></div>
+        <h1 class="hero-title">
+          <span class="lang-de">
+            <span class="hero-main">Buhlvest</span>
+            <span class="hero-subline">Hochwertige Gewerbe-Immobilien</span>
+          </span>
+          <span class="lang-en">
+            <span class="hero-main">Buhlvest</span>
+            <span class="hero-subline">Premium Commercial Real Estate</span>
+          </span>
+        </h1>
+        <p class="hero-subtitle"><span class="lang-de">Ihr Partner für hochwertige Gewerbe-Immobilien.</span><span class="lang-en">Your partner for premium commercial real estate developments.</span></p>
+        <a class="btn" href="#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span><span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="section-kicker"><span class="lang-de">Über Buhlvest</span><span class="lang-en">About Buhlvest</span></p>
+          <h2 class="section-title"><span class="lang-de">Qualität, Substanz und langfristiger Wert.</span><span class="lang-en">Quality, substance and long-term value.</span></h2>
+          <p class="section-text"><span class="lang-de">Seit über 20 Jahren entwickelt Buhlvest hochwertige Gewerbe-Immobilien im Großraum München. Unser Schwerpunkt liegt auf modernen und multifunktionalen Gewerbehallen, die durch eine durchdachte Planung, hochwertige Bauqualität und flexible Nutzungsmöglichkeiten überzeugen.
+Dabei betrachten wir Immobilien nicht als kurzfristige Projekte, sondern als langfristige Werte. Nachhaltige Konzepte, funktionale Architektur und die individuellen Anforderungen unserer Kunden stehen deshalb von Beginn an im Mittelpunkt.
+Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und auch in Zukunft flexibel und zuverlässig genutzt werden können.</span><span class="lang-en">For more than 20 years, Buhlvest has been developing high-quality commercial properties across the greater Munich area. Our focus is on modern, multifunctional commercial buildings that combine thoughtful planning, high construction quality and flexible usage options. We do not view real estate as a short-term project, but as a long-term asset. Sustainable concepts, functional architecture and the individual requirements of our clients are therefore at the heart of every development from the very beginning. Our aim is to create commercial properties that meet today’s demands while remaining flexible, reliable and fit for future use.</span></p>
+          <div class="stats">
+            <div class="stat"><strong>20+</strong><span><span class="lang-de">Jahre Erfahrung</span><span class="lang-en">Years of experience</span></span></div>
+            <div class="stat"><strong>MUC</strong><span><span class="lang-de">Fokus München</span><span class="lang-en">Munich focus</span></span></div>
+            <div class="stat"><strong>360°</strong><span><span class="lang-de">Von der Standortentwicklung bis zur schlüsselfertigen Gewerbeimmobilie</span><span class="lang-en">From site development to a turnkey commercial property</span></span></div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15l3-3 3 2 5-7" /><path d="M17 7h2v2" /></svg>
+          </div>
+          <h3><span class="lang-de">Was Buhlvest auszeichnet</span><span class="lang-en">What defines Buhlvest</span></h3>
+          <p class="section-text"><span class="lang-de">Unser Fokus liegt auf Gewerbe-Immobilien, die funktional geplant, hochwertig umgesetzt und langfristig nutzbar sind.</span><span class="lang-en">Our focus is on commercial properties that are functionally planned, built to a high standard and designed for long-term use.</span></p>
+          <ul class="about-highlights">
+            <li><span class="lang-de">Moderne und multifunktionale Gewerbeflächen</span><span class="lang-en">Modern and multifunctional commercial spaces</span></li>
+            <li><span class="lang-de">Flexible Nutzung für unterschiedliche Anforderungen</span><span class="lang-en">Flexible use for different requirements</span></li>
+            <li><span class="lang-de">Langfristiger Wert durch Qualität und Substanz</span><span class="lang-en">Long-term value through quality and substance</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <p class="section-kicker"><span class="lang-de">Unsere Leistungen</span><span class="lang-en">Our Services</span></p>
+        <h2 class="section-title"><span class="lang-de">Gewerbe-Immobilien durchdacht entwickelt.</span><span class="lang-en">Thoughtfully developed Commercial properties.</span></h2>
+        <p class="section-text"><span class="lang-de">Wir errichten Gewerbe-Immobilien von der ersten Konzeption bis zur fertigen, nutzbaren Lösung. Mit effizienter Planung, hochwertigen Materialien und einem klaren Blick für die Anforderungen unserer Kunden entstehen flexible und langfristig nutzbare Gewerbeobjekte.</span><span class="lang-en">We manage our projects from the initial concept through to the completed property. Efficient planning, high-quality materials and a clear understanding of our clients’ requirements enable us to create flexible commercial properties designed for long-term use.</span></p>
+        <div class="cards">
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8l6 6v12" /><path d="M14 3v6h6" /><path d="M8 13h8M8 17h8" /></svg></div><h3><span class="lang-de">Projektentwicklung</span><span class="lang-en">Project Development</span></h3><p><span class="lang-de">Analyse, Konzeption und Entwicklung hochwertiger Gewerbestandorte mit Fokus auf Nutzbarkeit, Wertstabilität und Marktfähigkeit.</span><span class="lang-en">Analysis, concept and development of premium commercial locations with a focus on usability, value stability and marketability.</span></p></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18" /><path d="M6 21V7h12v14" /><path d="M9 21v-5h6v5" /><path d="M8 10h2M14 10h2M8 13h2M14 13h2" /></svg></div><h3><span class="lang-de">Baumanagement</span><span class="lang-en">Construction Management</span></h3><p><span class="lang-de">Koordination, Qualitätskontrolle und Umsetzung anspruchsvoller Bauprojekte mit klarer Struktur und professioneller Steuerung.</span><span class="lang-en">Coordination, quality control and execution of demanding construction projects with clear structures and professional management.</span></p></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15l3-3 3 2 5-7" /><path d="M17 7h2v2" /></svg></div><h3><span class="lang-de">Vertrieb</span><span class="lang-en">Sales & Leasing</span></h3><p><span class="lang-de">Positionierung und Vermarktung ausgewählter Gewerbeflächen für Käufer, Mieter und Investoren im nationalen und internationalen Umfeld.</span><span class="lang-en">Positioning and marketing of selected commercial spaces for buyers, tenants and investors in national and international markets.</span></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="projects-head">
+          <div><p class="section-kicker"><span class="lang-de">Referenzen & Projekte</span><span class="lang-en">Project Portfolio</span></p><h2 class="section-title"><span class="lang-de">Ausgewählte Gewerbe-Immobilien.</span><span class="lang-en">Selected commercial properties.</span></h2></div>
+          <p class="section-text"><span class="lang-de">Einblicke in moderne, hochwertig realisierte Gewerbeimmobilien von Buhlvest.</span><span class="lang-en">Explore modern, high-quality commercial properties developed by Buhlvest.</span></p>
+        </div>
+        <div class="gallery">
+          <a class="project-card" href="projekt-1.html" aria-label="Referenzprojekt 1 öffnen">
+            <img src="hero.jpg" alt="Moderne Gewerbe-Immobilie von Buhlvest" />
+            <div class="project-info">
+              <span class="tag"><span class="lang-de">Referenzprojekt 1</span><span class="lang-en">Featured Project 1</span></span>
+              <h3><span class="lang-de">Moderne Gewerbeflächen in Putzbrunn bei München</span><span class="lang-en">Modern Commercial Spaces in Putzbrunn near Munich</span></h3>
+              <p><span class="lang-de">Repräsentative Architektur, flexible Nutzflächen und hochwertige Ausführung für anspruchsvolle gewerbliche Nutzung.</span><span class="lang-en">Representative architecture, flexible usable space and high-quality execution for demanding commercial use.</span></p>
+            </div>
+          </a>
+
+          <a class="project-card" href="projekt-2.html" aria-label="Referenzprojekt 2 öffnen">
+            <img src="hero.jpg" alt="Weiteres Referenzprojekt von Buhlvest" />
+            <div class="project-info">
+              <span class="tag"><span class="lang-de">Referenzprojekt 2</span><span class="lang-en">Featured Project 2</span></span>
+              <h3><span class="lang-de">Weitere Gewerbeimmobilie im Großraum München</span><span class="lang-en">Additional Commercial Property in the Greater Munich Area</span></h3>
+              <p><span class="lang-de">Hier können später Projektbild, Standort, Flächenangaben und weitere Details zum zweiten Referenzprojekt ergänzt werden.</span><span class="lang-en">Project image, location, floor area and further details for the second reference project can be added here later.</span></p>
+            </div>
+          </a>
+
+          <a class="project-card" href="projekt-3.html" aria-label="Geplantes Projekt 3 öffnen">
+            <img src="hero.jpg" alt="Geplantes Gewerbeprojekt von Buhlvest" />
+            <div class="project-info">
+              <span class="tag"><span class="lang-de">Geplantes Projekt 3</span><span class="lang-en">Planned Project 3</span></span>
+              <h3><span class="lang-de">Geplantes Gewerbeprojekt</span><span class="lang-en">Planned Commercial Development</span></h3>
+              <p><span class="lang-de">Ein geplanter Standort für zukünftige gewerbliche Nutzung. Weitere Informationen können nach Projektfortschritt ergänzt werden.</span><span class="lang-en">A planned location for future commercial use. Further information can be added as the project progresses.</span></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-kicker"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></p>
+          <h2 class="section-title"><span class="lang-de">Gerne informieren wir Sie persönlich.</span><span class="lang-en">We would be pleased to assist you personally.</span></h2>
+          <p class="section-text"><span class="lang-de">Ob Gewerbeimmobilien, verfügbare Flächen oder geplante Projekte – bei Kauf, Miete oder Investment freuen wir uns auf Ihre Anfrage.</span><span class="lang-en">Whether commercial properties, available spaces or upcoming projects — for acquisition, leasing or investment, we look forward to your enquiry.</span></p>
+          <div class="contact-details">
+            <div class="detail"><strong><span class="lang-de">Adresse</span><span class="lang-en">Address</span></strong><span>Karwendelstr. 16, 82024 Taufkirchen (Landkreis München)</span></div>
+            <div class="detail"><strong><span class="lang-de">Telefon</span><span class="lang-en">Phone</span></strong><a href="tel:+4915112333340">0049 151 12333340</a></div>
+            <div class="detail"><strong>E-Mail</strong><a href="mailto:info@buhlvest.de">info@buhlvest.de</a></div>
+          </div>
+        </div>
+        <form class="form" id="contactForm">
+          <label for="name"><span class="lang-de">Name</span><span class="lang-en">Name</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+          <label for="email"><span class="lang-de">E-Mail</span><span class="lang-en">Email</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+          <label for="message"><span class="lang-de">Nachricht</span><span class="lang-en">Message</span></label>
+          <textarea id="message" name="message" required></textarea>
+          <button class="btn" type="submit"><span class="lang-de">Nachricht vorbereiten</span><span class="lang-en">Prepare message</span><span aria-hidden="true">→</span></button>
+          <p class="form-note"><span class="lang-de">Hinweis: Dieses statische Formular öffnet Ihr E-Mail-Programm. Für ein echtes Online-Formular kann später ein Formularservice ergänzt werden.</span><span class="lang-en">Note: This static form opens your email client. A dedicated form service can be added later.</span></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Buhlvest. <span class="lang-de">Alle Rechte vorbehalten.</span><span class="lang-en">All rights reserved.</span></p>
+      <div class="footer-links">
+        <a href="impressum.html"><span class="lang-de">Impressum</span><span class="lang-en">Legal Notice</span></a>
+        <a href="datenschutz.html"><span class="lang-de">Datenschutzerklärung</span><span class="lang-en">Privacy Policy</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const deBtn = document.getElementById("deBtn");
+    const enBtn = document.getElementById("enBtn");
+    const contactForm = document.getElementById("contactForm");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 30);
+    });
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    function setLanguage(language) {
+      const isEnglish = language === "en";
+      document.body.classList.toggle("english", isEnglish);
+      deBtn.classList.toggle("active", !isEnglish);
+      enBtn.classList.toggle("active", isEnglish);
+      document.documentElement.lang = isEnglish ? "en" : "de";
+      localStorage.setItem("buhlvest-language", language);
+      document.getElementById("name").placeholder = isEnglish ? "Your name" : "Ihr Name";
+      document.getElementById("email").placeholder = isEnglish ? "your@email.com" : "ihre@email.de";
+      document.getElementById("message").placeholder = isEnglish ? "How can we help you?" : "Wie können wir Ihnen helfen?";
+    }
+
+    deBtn.addEventListener("click", () => setLanguage("de"));
+    enBtn.addEventListener("click", () => setLanguage("en"));
+
+    setLanguage(localStorage.getItem("buhlvest-language") || "de");
+
+    contactForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const name = encodeURIComponent(document.getElementById("name").value.trim());
+      const email = encodeURIComponent(document.getElementById("email").value.trim());
+      const message = encodeURIComponent(document.getElementById("message").value.trim());
+      const subject = encodeURIComponent("Anfrage über die Buhlvest Website");
+      const body = encodeURIComponent("Name: ") + name + "%0A" +
+                   encodeURIComponent("E-Mail: ") + email + "%0A%0A" +
+                   encodeURIComponent("Nachricht:") + "%0A" + message;
+      window.location.href = `mailto:info@buhlvest.de?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
