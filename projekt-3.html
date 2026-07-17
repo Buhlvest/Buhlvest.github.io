@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buhlvest – Hochwertige Gewerbe-Immobilien</title>
-  <meta name="description" content="Buhlvest entwickelt hochwertige Gewerbe-Immobilienprojekte in und um München für Käufer, Mieter und Investoren weltweit." />
+  <title>Geplantes Gewerbeprojekt – Buhlvest</title>
+  <meta name="description" content="Ein geplanter Standort für zukünftige gewerbliche Nutzung mit Entwicklungspotenzial." />
   <style>
+
     :root {
       --navy: #07111f;
       --navy-2: #0b1829;
@@ -194,22 +195,190 @@
       .project-info { left: 22px; right: 22px; bottom: 22px; }
       .project-card, .project-card.small { min-height: 360px; }
     }
+  
+
+    .project-detail-hero {
+      min-height: 72vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      padding: 150px 0 92px;
+      background:
+        linear-gradient(180deg, rgba(7,17,31,0.52), rgba(7,17,31,0.94)),
+        linear-gradient(90deg, rgba(7,17,31,0.90), rgba(7,17,31,0.30), rgba(7,17,31,0.84)),
+        url("hero.jpg") center / cover no-repeat;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-detail-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 70%, rgba(201,164,92,0.18), transparent 32%),
+        radial-gradient(circle at 84% 12%, rgba(255,255,255,0.08), transparent 28%);
+      pointer-events: none;
+    }
+
+    .project-detail-content {
+      position: relative;
+      max-width: 980px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      color: var(--gold-light);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .project-detail-title {
+      font-size: clamp(2.6rem, 5.6vw, 6rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin-bottom: 24px;
+    }
+
+    .project-detail-subtitle {
+      color: rgba(255,255,255,0.82);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      max-width: 760px;
+    }
+
+    .project-detail-section {
+      background: linear-gradient(180deg, var(--navy), var(--navy-2));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .facts-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+      box-shadow: var(--shadow);
+    }
+
+    .facts-list {
+      list-style: none;
+      display: grid;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .facts-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      color: var(--muted);
+    }
+
+    .facts-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .facts-list strong {
+      color: var(--gold-light);
+      font-weight: 800;
+    }
+
+    .project-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1.06rem;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.05);
+      color: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .next-projects {
+      background: var(--navy);
+    }
+
+    .mini-projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 42px;
+    }
+
+    .mini-project {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      background: rgba(255,255,255,0.045);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .mini-project:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,164,92,0.42);
+    }
+
+    .mini-project span {
+      color: var(--gold-light);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 900;
+    }
+
+    .mini-project h3 {
+      margin-top: 10px;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 920px) {
+      .detail-grid,
+      .mini-projects {
+        grid-template-columns: 1fr;
+      }
+      .project-detail-title {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
   <header class="site-header" id="siteHeader">
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="Buhlvest Startseite">
+      <a class="brand" href="index.html#home" aria-label="Buhlvest Startseite">
         <img src="logo.png" alt="Buhlvest Logo" />
         <span class="brand-name">Buhlvest</span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Hauptnavigation">
-        <a href="#home"><span class="lang-de">Startseite</span><span class="lang-en">Home</span></a>
-        <a href="#about"><span class="lang-de">Über uns</span><span class="lang-en">About</span></a>
-        <a href="#services"><span class="lang-de">Leistungen</span><span class="lang-en">Services</span></a>
-        <a href="#projects"><span class="lang-de">Projekte</span><span class="lang-en">Projects</span></a>
-        <a href="#contact"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></a>
+        <a href="index.html#home"><span class="lang-de">Startseite</span><span class="lang-en">Home</span></a>
+        <a href="index.html#about"><span class="lang-de">Über uns</span><span class="lang-en">About</span></a>
+        <a href="index.html#services"><span class="lang-de">Leistungen</span><span class="lang-en">Services</span></a>
+        <a href="index.html#projects"><span class="lang-de">Projekte</span><span class="lang-en">Projects</span></a>
+        <a href="index.html#contact"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></a>
         <div class="language-toggle" aria-label="Sprache wechseln">
           <button type="button" class="active" id="deBtn">DE</button>
           <button type="button" id="enBtn">EN</button>
@@ -219,130 +388,65 @@
     </div>
   </header>
 
+
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-content">
-        <img class="hero-logo" src="logo.png" alt="Buhlvest Logo" />
-        <div class="eyebrow"><span class="lang-de">Gewerbe-Immobilien München</span><span class="lang-en">Commercial Real Estate Munich</span></div>
-        <h1 class="hero-title">
-          <span class="lang-de">
-            <span class="hero-main">Buhlvest</span>
-            <span class="hero-subline">Hochwertige Gewerbe-Immobilien</span>
-          </span>
-          <span class="lang-en">
-            <span class="hero-main">Buhlvest</span>
-            <span class="hero-subline">Premium Commercial Real Estate</span>
-          </span>
-        </h1>
-        <p class="hero-subtitle"><span class="lang-de">Ihr Partner für hochwertige Gewerbe-Immobilien.</span><span class="lang-en">Your partner for premium commercial real estate developments.</span></p>
-        <a class="btn" href="#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span><span aria-hidden="true">→</span></a>
+    <section class="project-detail-hero">
+      <div class="container project-detail-content">
+        <a class="back-link" href="index.html#projects">← <span class="lang-de">Zurück zu den Projekten</span><span class="lang-en">Back to projects</span></a>
+        <p class="section-kicker"><span class="lang-de">Geplantes Projekt 3</span><span class="lang-en">Planned Project 3</span></p>
+        <h1 class="project-detail-title"><span class="lang-de">Geplantes Gewerbeprojekt</span><span class="lang-en">Planned Commercial Development</span></h1>
+        <p class="project-detail-subtitle"><span class="lang-de">Ein geplanter Standort für zukünftige gewerbliche Nutzung mit Entwicklungspotenzial.</span><span class="lang-en">A planned location for future commercial use with development potential.</span></p>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div>
-          <p class="section-kicker"><span class="lang-de">Über Buhlvest</span><span class="lang-en">About Buhlvest</span></p>
-          <h2 class="section-title"><span class="lang-de">Qualität, Substanz und langfristiger Wert.</span><span class="lang-en">Quality, substance and long-term value.</span></h2>
-          <p class="section-text"><span class="lang-de">Seit über 20 Jahren entwickelt Buhlvest hochwertige Gewerbe-Immobilien im Großraum München. Unser Schwerpunkt liegt auf modernen und multifunktionalen Gewerbehallen, die durch eine durchdachte Planung, hochwertige Bauqualität und flexible Nutzungsmöglichkeiten überzeugen.
-Dabei betrachten wir Immobilien nicht als kurzfristige Projekte, sondern als langfristige Werte. Nachhaltige Konzepte, funktionale Architektur und die individuellen Anforderungen unserer Kunden stehen deshalb von Beginn an im Mittelpunkt.
-Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und auch in Zukunft flexibel und zuverlässig genutzt werden können.</span><span class="lang-en">For more than 20 years, Buhlvest has been developing high-quality commercial properties across the greater Munich area. Our focus is on modern, multifunctional commercial buildings that combine thoughtful planning, high construction quality and flexible usage options. We do not view real estate as a short-term project, but as a long-term asset. Sustainable concepts, functional architecture and the individual requirements of our clients are therefore at the heart of every development from the very beginning. Our aim is to create commercial properties that meet today’s demands while remaining flexible, reliable and fit for future use.</span></p>
-          <div class="stats">
-            <div class="stat"><strong>20+</strong><span><span class="lang-de">Jahre Erfahrung</span><span class="lang-en">Years of experience</span></span></div>
-            <div class="stat"><strong>MUC</strong><span><span class="lang-de">Fokus München</span><span class="lang-en">Munich focus</span></span></div>
-            <div class="stat"><strong>360°</strong><span><span class="lang-de">Von der Standortentwicklung bis zur schlüsselfertigen Gewerbeimmobilie</span><span class="lang-en">From site development to a turnkey commercial property</span></span></div>
+    <section class="project-detail-section">
+      <div class="container detail-grid">
+        <div class="project-copy">
+          <p class="section-kicker"><span class="lang-de">Projektbeschreibung</span><span class="lang-en">Project Overview</span></p>
+          <h2 class="section-title"><span class="lang-de">Gewerbeimmobilie mit klarer Funktion und langfristiger Perspektive.</span><span class="lang-en">Commercial property with clear functionality and long-term perspective.</span></h2>
+          <p><span class="lang-de">Diese Seite ist für ein geplantes Projekt vorbereitet und kann je nach Projektfortschritt erweitert werden.</span></p><p><span class="lang-de">Sobald weitere Informationen verfügbar sind, können hier Konzept, Lage, geplante Flächen, Zeitplan und Ansprechpartner ergänzt werden.</span></p>
+          <p><span class="lang-en">This page is prepared for a planned project and can be expanded as the development progresses.</span></p><p><span class="lang-en">Once more information is available, concept, location, planned floor areas, timeline and contact details can be added here.</span></p>
+          <div class="project-actions">
+            <a class="btn" href="index.html#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span> →</a>
+            <a class="btn secondary" href="index.html#projects"><span class="lang-de">Alle Projekte ansehen</span><span class="lang-en">View all projects</span></a>
           </div>
         </div>
-        <div class="about-card">
-          <div class="about-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15l3-3 3 2 5-7" /><path d="M17 7h2v2" /></svg>
-          </div>
-          <h3><span class="lang-de">Was Buhlvest auszeichnet</span><span class="lang-en">What defines Buhlvest</span></h3>
-          <p class="section-text"><span class="lang-de">Unser Fokus liegt auf Gewerbe-Immobilien, die funktional geplant, hochwertig umgesetzt und langfristig nutzbar sind.</span><span class="lang-en">Our focus is on commercial properties that are functionally planned, built to a high standard and designed for long-term use.</span></p>
-          <ul class="about-highlights">
-            <li><span class="lang-de">Moderne und multifunktionale Gewerbeflächen</span><span class="lang-en">Modern and multifunctional commercial spaces</span></li>
-            <li><span class="lang-de">Flexible Nutzung für unterschiedliche Anforderungen</span><span class="lang-en">Flexible use for different requirements</span></li>
-            <li><span class="lang-de">Langfristiger Wert durch Qualität und Substanz</span><span class="lang-en">Long-term value through quality and substance</span></li>
+
+        <aside class="facts-card">
+          <p class="section-kicker"><span class="lang-de">Eckdaten</span><span class="lang-en">Key Facts</span></p>
+          <ul class="facts-list">
+            <li><strong><span class="lang-de">Status</span><span class="lang-en">Status</span></strong><span><span class="lang-de">In Planung</span><span class="lang-en">Planned</span></span></li>
+            <li><strong><span class="lang-de">Standort</span><span class="lang-en">Location</span></strong><span>Standort folgt</span></li>
+            <li><strong><span class="lang-de">Nutzung</span><span class="lang-en">Use</span></strong><span><span class="lang-de">Geplantes Gewerbeprojekt</span><span class="lang-en">Planned commercial development</span></span></li>
+            <li><strong><span class="lang-de">Flächen</span><span class="lang-en">Areas</span></strong><span><span class="lang-de">Angaben folgen</span><span class="lang-en">To be added</span></span></li>
           </ul>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <section class="services" id="services">
+    <section class="next-projects">
       <div class="container">
-        <p class="section-kicker"><span class="lang-de">Unsere Leistungen</span><span class="lang-en">Our Services</span></p>
-        <h2 class="section-title"><span class="lang-de">Gewerbe-Immobilien durchdacht entwickelt.</span><span class="lang-en">Thoughtfully developed Commercial properties.</span></h2>
-        <p class="section-text"><span class="lang-de">Wir errichten Gewerbe-Immobilien von der ersten Konzeption bis zur fertigen, nutzbaren Lösung. Mit effizienter Planung, hochwertigen Materialien und einem klaren Blick für die Anforderungen unserer Kunden entstehen flexible und langfristig nutzbare Gewerbeobjekte.</span><span class="lang-en">We manage our projects from the initial concept through to the completed property. Efficient planning, high-quality materials and a clear understanding of our clients’ requirements enable us to create flexible commercial properties designed for long-term use.</span></p>
-        <div class="cards">
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8l6 6v12" /><path d="M14 3v6h6" /><path d="M8 13h8M8 17h8" /></svg></div><h3><span class="lang-de">Projektentwicklung</span><span class="lang-en">Project Development</span></h3><p><span class="lang-de">Analyse, Konzeption und Entwicklung hochwertiger Gewerbestandorte mit Fokus auf Nutzbarkeit, Wertstabilität und Marktfähigkeit.</span><span class="lang-en">Analysis, concept and development of premium commercial locations with a focus on usability, value stability and marketability.</span></p></article>
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18" /><path d="M6 21V7h12v14" /><path d="M9 21v-5h6v5" /><path d="M8 10h2M14 10h2M8 13h2M14 13h2" /></svg></div><h3><span class="lang-de">Baumanagement</span><span class="lang-en">Construction Management</span></h3><p><span class="lang-de">Koordination, Qualitätskontrolle und Umsetzung anspruchsvoller Bauprojekte mit klarer Struktur und professioneller Steuerung.</span><span class="lang-en">Coordination, quality control and execution of demanding construction projects with clear structures and professional management.</span></p></article>
-          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 15l3-3 3 2 5-7" /><path d="M17 7h2v2" /></svg></div><h3><span class="lang-de">Vertrieb</span><span class="lang-en">Sales & Leasing</span></h3><p><span class="lang-de">Positionierung und Vermarktung ausgewählter Gewerbeflächen für Käufer, Mieter und Investoren im nationalen und internationalen Umfeld.</span><span class="lang-en">Positioning and marketing of selected commercial spaces for buyers, tenants and investors in national and international markets.</span></p></article>
-        </div>
-      </div>
-    </section>
+        <p class="section-kicker"><span class="lang-de">Weitere Projekte</span><span class="lang-en">More Projects</span></p>
+        <h2 class="section-title"><span class="lang-de">Weitere Gewerbeimmobilien entdecken.</span><span class="lang-en">Explore more commercial properties.</span></h2>
+        <div class="mini-projects">
 
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="projects-head">
-          <div><p class="section-kicker"><span class="lang-de">Referenzen & Projekte</span><span class="lang-en">Project Portfolio</span></p><h2 class="section-title"><span class="lang-de">Ausgewählte Gewerbe-Immobilien.</span><span class="lang-en">Selected commercial properties.</span></h2></div>
-          <p class="section-text"><span class="lang-de">Einblicke in moderne, hochwertig realisierte Gewerbeimmobilien von Buhlvest.</span><span class="lang-en">Explore modern, high-quality commercial properties developed by Buhlvest.</span></p>
-        </div>
-        <div class="gallery">
-          <a class="project-card" href="projekt-1.html" aria-label="Referenzprojekt 1 öffnen">
-            <img src="hero.jpg" alt="Moderne Gewerbe-Immobilie von Buhlvest" />
-            <div class="project-info">
-              <span class="tag"><span class="lang-de">Referenzprojekt 1</span><span class="lang-en">Featured Project 1</span></span>
-              <h3><span class="lang-de">Moderne Gewerbeflächen in Putzbrunn bei München</span><span class="lang-en">Modern Commercial Spaces in Putzbrunn near Munich</span></h3>
-              <p><span class="lang-de">Repräsentative Architektur, flexible Nutzflächen und hochwertige Ausführung für anspruchsvolle gewerbliche Nutzung.</span><span class="lang-en">Representative architecture, flexible usable space and high-quality execution for demanding commercial use.</span></p>
-            </div>
+          <a class="mini-project" href="projekt-1.html">
+            <span><span class="lang-de">Referenzprojekt 1</span><span class="lang-en">Featured Project 1</span></span>
+            <h3><span class="lang-de">Moderne Gewerbeflächen in Putzbrunn bei München</span><span class="lang-en">Modern Commercial Spaces in Putzbrunn near Munich</span></h3>
           </a>
-
-          <a class="project-card" href="projekt-2.html" aria-label="Referenzprojekt 2 öffnen">
-            <img src="hero.jpg" alt="Weiteres Referenzprojekt von Buhlvest" />
-            <div class="project-info">
-              <span class="tag"><span class="lang-de">Referenzprojekt 2</span><span class="lang-en">Featured Project 2</span></span>
-              <h3><span class="lang-de">Weitere Gewerbeimmobilie im Großraum München</span><span class="lang-en">Additional Commercial Property in the Greater Munich Area</span></h3>
-              <p><span class="lang-de">Hier können später Projektbild, Standort, Flächenangaben und weitere Details zum zweiten Referenzprojekt ergänzt werden.</span><span class="lang-en">Project image, location, floor area and further details for the second reference project can be added here later.</span></p>
-            </div>
+          <a class="mini-project" href="projekt-2.html">
+            <span><span class="lang-de">Referenzprojekt 2</span><span class="lang-en">Featured Project 2</span></span>
+            <h3><span class="lang-de">Weitere Gewerbeimmobilie im Großraum München</span><span class="lang-en">Additional Commercial Property in the Greater Munich Area</span></h3>
           </a>
-
-          <a class="project-card" href="projekt-3.html" aria-label="Geplantes Projekt 3 öffnen">
-            <img src="hero.jpg" alt="Geplantes Gewerbeprojekt von Buhlvest" />
-            <div class="project-info">
-              <span class="tag"><span class="lang-de">Geplantes Projekt 3</span><span class="lang-en">Planned Project 3</span></span>
-              <h3><span class="lang-de">Geplantes Gewerbeprojekt</span><span class="lang-en">Planned Commercial Development</span></h3>
-              <p><span class="lang-de">Ein geplanter Standort für zukünftige gewerbliche Nutzung. Weitere Informationen können nach Projektfortschritt ergänzt werden.</span><span class="lang-en">A planned location for future commercial use. Further information can be added as the project progresses.</span></p>
-            </div>
+          <a class="mini-project" href="index.html#contact">
+            <span><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></span>
+            <h3><span class="lang-de">Interesse an verfügbaren Flächen?</span><span class="lang-en">Interested in available spaces?</span></h3>
           </a>
         </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <p class="section-kicker"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></p>
-          <h2 class="section-title"><span class="lang-de">Gerne informieren wir Sie persönlich.</span><span class="lang-en">We would be pleased to assist you personally.</span></h2>
-          <p class="section-text"><span class="lang-de">Ob Gewerbeimmobilien, verfügbare Flächen oder geplante Projekte – bei Kauf, Miete oder Investment freuen wir uns auf Ihre Anfrage.</span><span class="lang-en">Whether commercial properties, available spaces or upcoming projects — for acquisition, leasing or investment, we look forward to your enquiry.</span></p>
-          <div class="contact-details">
-            <div class="detail"><strong><span class="lang-de">Adresse</span><span class="lang-en">Address</span></strong><span>Karwendelstr. 16, 82024 Taufkirchen (Landkreis München)</span></div>
-            <div class="detail"><strong><span class="lang-de">Telefon</span><span class="lang-en">Phone</span></strong><a href="tel:+4915112333340">0049 151 12333340</a></div>
-            <div class="detail"><strong>E-Mail</strong><a href="mailto:info@buhlvest.de">info@buhlvest.de</a></div>
-          </div>
-        </div>
-        <form class="form" id="contactForm">
-          <label for="name"><span class="lang-de">Name</span><span class="lang-en">Name</span></label>
-          <input id="name" name="name" type="text" autocomplete="name" required />
-          <label for="email"><span class="lang-de">E-Mail</span><span class="lang-en">Email</span></label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-          <label for="message"><span class="lang-de">Nachricht</span><span class="lang-en">Message</span></label>
-          <textarea id="message" name="message" required></textarea>
-          <button class="btn" type="submit"><span class="lang-de">Nachricht vorbereiten</span><span class="lang-en">Prepare message</span><span aria-hidden="true">→</span></button>
-          <p class="form-note"><span class="lang-de">Hinweis: Dieses statische Formular öffnet Ihr E-Mail-Programm. Für ein echtes Online-Formular kann später ein Formularservice ergänzt werden.</span><span class="lang-en">Note: This static form opens your email client. A dedicated form service can be added later.</span></p>
-        </form>
       </div>
     </section>
   </main>
+
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -354,13 +458,13 @@ Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und
     </div>
   </footer>
 
+
   <script>
     const header = document.getElementById("siteHeader");
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
     const deBtn = document.getElementById("deBtn");
     const enBtn = document.getElementById("enBtn");
-    const contactForm = document.getElementById("contactForm");
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -387,27 +491,13 @@ Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und
       enBtn.classList.toggle("active", isEnglish);
       document.documentElement.lang = isEnglish ? "en" : "de";
       localStorage.setItem("buhlvest-language", language);
-      document.getElementById("name").placeholder = isEnglish ? "Your name" : "Ihr Name";
-      document.getElementById("email").placeholder = isEnglish ? "your@email.com" : "ihre@email.de";
-      document.getElementById("message").placeholder = isEnglish ? "How can we help you?" : "Wie können wir Ihnen helfen?";
     }
 
     deBtn.addEventListener("click", () => setLanguage("de"));
     enBtn.addEventListener("click", () => setLanguage("en"));
 
     setLanguage(localStorage.getItem("buhlvest-language") || "de");
-
-    contactForm.addEventListener("submit", event => {
-      event.preventDefault();
-      const name = encodeURIComponent(document.getElementById("name").value.trim());
-      const email = encodeURIComponent(document.getElementById("email").value.trim());
-      const message = encodeURIComponent(document.getElementById("message").value.trim());
-      const subject = encodeURIComponent("Anfrage über die Buhlvest Website");
-      const body = encodeURIComponent("Name: ") + name + "%0A" +
-                   encodeURIComponent("E-Mail: ") + email + "%0A%0A" +
-                   encodeURIComponent("Nachricht:") + "%0A" + message;
-      window.location.href = `mailto:info@buhlvest.de?subject=${subject}&body=${body}`;
-    });
   </script>
+
 </body>
 </html>
