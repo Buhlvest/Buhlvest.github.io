@@ -78,6 +78,20 @@
     .eyebrow::before, .eyebrow::after { content: ""; width: 42px; height: 1px; background: rgba(201,164,92,0.72); }
     .hero-logo { width: 148px; height: 148px; object-fit: cover; border-radius: 26px; margin: 0 auto 30px; box-shadow: var(--shadow); border: 1px solid rgba(201,164,92,0.38); }
     h1 { font-size: clamp(2.6rem, 6vw, 6.8rem); line-height: 0.98; letter-spacing: -0.055em; margin-bottom: 26px; }
+    .hero-title .lang-de,
+    .hero-title .lang-en { width: 100%; }
+    body:not(.english) .hero-title .lang-de { display: block; }
+    body.english .hero-title .lang-en { display: block; }
+    .hero-main { display: block; }
+    .hero-subline {
+      display: block;
+      margin-top: 14px;
+      font-size: 0.42em;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      color: var(--gold-light);
+    }
     .hero-subtitle { color: rgba(255,255,255,0.84); font-size: clamp(1.05rem, 2vw, 1.42rem); max-width: 760px; margin: 0 auto 42px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(201,164,92,0.75); border-radius: 999px; padding: 15px 25px; font-weight: 800; letter-spacing: 0.02em; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #07111f; box-shadow: 0 18px 35px rgba(201,164,92,0.24); transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 24px 46px rgba(201,164,92,0.32); }
@@ -196,14 +210,17 @@
     <section class="hero" id="home">
       <div class="container hero-content">
         <img class="hero-logo" src="logo.png" alt="Buhlvest Logo" />
-        <div class="eyebrow"><span class="lang-de">Gewerbeimmobilien München</span><span class="lang-en">Commercial Real Estate Munich</span></div>
-        <h1><span class="lang-de">Buhlvest</span>  <span class="hero-subline">Hochwertige Gewerbe-Immobilien</span>
-  </span>
-
-  <span class="lang-en">
-    <span class="hero-main">Buhlvest</span>
-    <span class="hero-subline">Premium Commercial Real Estate</span>
-  </span>/h1>
+        <div class="eyebrow"><span class="lang-de">Gewerbeimmobilien · München</span><span class="lang-en">Commercial Real Estate · Munich</span></div>
+        <h1 class="hero-title">
+          <span class="lang-de">
+            <span class="hero-main">Buhlvest</span>
+            <span class="hero-subline">Hochwertige Gewerbe-Immobilien</span>
+          </span>
+          <span class="lang-en">
+            <span class="hero-main">Buhlvest</span>
+            <span class="hero-subline">Premium Commercial Real Estate</span>
+          </span>
+        </h1>
         <p class="hero-subtitle"><span class="lang-de">Ihr Partner für hochwertige Gewerbeprojekte.</span><span class="lang-en">Your partner for premium commercial real estate developments.</span></p>
         <a class="btn" href="#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span><span aria-hidden="true">→</span></a>
       </div>
