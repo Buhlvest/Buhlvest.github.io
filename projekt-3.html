@@ -69,7 +69,7 @@
       background:
         linear-gradient(180deg, rgba(7,17,31,0.55), rgba(7,17,31,0.90)),
         linear-gradient(90deg, rgba(7,17,31,0.85), rgba(7,17,31,0.18), rgba(7,17,31,0.86)),
-        url("hero.jpg") center / cover no-repeat;
+        url("project-3.jpg") center / cover no-repeat;
       overflow: hidden;
     }
     .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 38%, rgba(201,164,92,0.20), transparent 34%), radial-gradient(circle at 12% 85%, rgba(255,255,255,0.08), transparent 30%); pointer-events: none; }
@@ -205,7 +205,7 @@
       background:
         linear-gradient(180deg, rgba(7,17,31,0.52), rgba(7,17,31,0.94)),
         linear-gradient(90deg, rgba(7,17,31,0.90), rgba(7,17,31,0.30), rgba(7,17,31,0.84)),
-        url("hero.jpg") center / cover no-repeat;
+        url("project-3.jpg") center / cover no-repeat;
       border-bottom: 1px solid var(--line);
     }
 
@@ -361,6 +361,39 @@
       }
     }
 
+  
+    /* Projekt 3 Feinschliff */
+    .project-detail-hero {
+      background-position: center center !important;
+    }
+
+    .project-copy p,
+    .facts-list span,
+    .project-detail-subtitle {
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .facts-list li > span {
+      text-align: right;
+      max-width: 58%;
+    }
+
+    @media (max-width: 700px) {
+      .facts-list li {
+        display: block;
+      }
+
+      .facts-list li > span {
+        display: block;
+        max-width: none;
+        text-align: left;
+        margin-top: 6px;
+      }
+    }
+
   </style>
 </head>
 
@@ -392,8 +425,8 @@
     <section class="project-detail-hero">
       <div class="container project-detail-content">
         <a class="back-link" href="index.html#projects">← <span class="lang-de">Zurück zu den Projekten</span><span class="lang-en">Back to projects</span></a>
-        <p class="section-kicker"><span class="lang-de">Geplantes Projekt 3</span><span class="lang-en">Planned Project 3</span></p>
-        <h1 class="project-detail-title"><span class="lang-de">Geplante Gewerbehalle 2027</span><span class="lang-en">Planned Commercial Development 2027</span></h1>
+        <p class="section-kicker"><span class="lang-de">Geplantes Projekt 2027</span><span class="lang-en">Planned Project 2027</span></p>
+        <h1 class="project-detail-title"><span class="lang-de">Gewerbehallen in Taufkirchen bei München</span><span class="lang-en">Commercial Halls in Taufkirchen near Munich</span></h1>
       </div>
     </section>
 
@@ -402,8 +435,8 @@
         <div class="project-copy">
           <p class="section-kicker"><span class="lang-de">Projektbeschreibung</span><span class="lang-en">Project Overview</span></p>
           <h2 class="section-title"><span class="lang-de">Gewerbeimmobilie mit flexibler Nutzung in optimaler Lage</span><span class="lang-en">Commercial property offering flexible use in a prime location.</span></h2>
-          <p><span class="lang-de">In Taufkirchen bei München entsteht eine moderne und hochwertig ausgeführte Gewerbehalle mit flexiblen Nutzungsmöglichkeiten. Die durchdachte Planung ermöglicht eine individuelle Anpassung an unterschiedliche betriebliche Anforderungen. Dank der verkehrsgünstigen Lage und der hervorragenden Anbindung bietet das Projekt ideale Voraussetzungen für Unternehmen im Großraum München.</span></p>
-          <p><span class="lang-en">A modern, high-quality commercial building is being developed in Taufkirchen near Munich, offering flexible options for a wide range of uses. Its carefully considered design allows the space to be adapted to different operational requirements. Thanks to its convenient location and excellent transport connections, the project provides ideal conditions for companies in the greater Munich area.</span></p></p>
+          <p><span class="lang-de">In Taufkirchen bei München entsteht eine moderne und hochwertig ausgeführte Gewerbehalle mit flexiblen Nutzungsmöglichkeiten. Die durchdachte Planung ermöglicht eine individuelle Anpassung an unterschiedliche betriebliche Anforderungen. Dank der verkehrsgünstigen Lage direkt an der Autobahn A995 bietet das Projekt ideale Voraussetzungen für Unternehmen im Großraum München.</span></p>
+          <p><span class="lang-en">A modern, high-quality commercial building is being developed in Taufkirchen near Munich, offering flexible options for a wide range of uses. Its carefully considered design allows the space to be adapted to different operational requirements. Thanks to its convenient location directly off the A995 motorway, the project provides ideal conditions for companies in the greater Munich area.</span></p>
           <div class="project-actions">
             <a class="btn" href="index.html#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span> →</a>
             <a class="btn secondary" href="index.html#projects"><span class="lang-de">Alle Projekte ansehen</span><span class="lang-en">View all projects</span></a>
@@ -414,8 +447,9 @@
           <p class="section-kicker"><span class="lang-de">Eckdaten</span><span class="lang-en">Key Facts</span></p>
           <ul class="facts-list">
             <li><strong><span class="lang-de">Status</span><span class="lang-en">Status</span></strong><span><span class="lang-de">In Planung</span><span class="lang-en">Planned</span></span></li>
-            <li><strong><span class="lang-de">Standort</span><span class="lang-en">Location</span></strong><span>Taufkirchen bei München, direkt an der Autobahn A995</span></li><span class="lang-en">Taufkirchen near Munich, directly off the A995 motorway.</span></span></li>
-            <li><strong><span class="lang-de">Nutzung</span><span class="lang-en">Use</span></strong><span><span class="lang-de">Autarke Gewerbehallen mit flexibler Nutzung</span><span class="lang-en">Self-contained commercial units offering flexible use.</span></span></li>
+            <li><strong><span class="lang-de">Standort</span><span class="lang-en">Location</span></strong><span><span class="lang-de">Taufkirchen bei München, direkt an der Autobahn A995</span><span class="lang-en">Taufkirchen near Munich, directly off the A995 motorway</span></span></li>
+            <li><strong><span class="lang-de">Nutzung</span><span class="lang-en">Use</span></strong><span><span class="lang-de">Autarke Gewerbehallen mit flexibler Nutzung</span><span class="lang-en">Self-contained commercial units offering flexible use</span></span></li>
+            <li><strong><span class="lang-de">Fertigstellung</span><span class="lang-en">Completion</span></strong><span>2027</span></li>
             <li><strong><span class="lang-de">Flächen</span><span class="lang-en">Areas</span></strong><span><span class="lang-de">Angaben folgen</span><span class="lang-en">To be added</span></span></li>
           </ul>
         </aside>
@@ -434,7 +468,7 @@
           </a>
           <a class="mini-project" href="projekt-2.html">
             <span><span class="lang-de">Referenzprojekt 2</span><span class="lang-en">Featured Project 2</span></span>
-            <h3><span class="lang-de">Weitere Gewerbeimmobilie im Großraum München</span><span class="lang-en">Additional Commercial Property in the Greater Munich Area</span></h3>
+            <h3><span class="lang-de">Moderne Gewerbeflächen in Putzbrunn bei München</span><span class="lang-en">Modern Commercial Spaces in Putzbrunn near Munich</span></h3>
           </a>
           <a class="mini-project" href="index.html#contact">
             <span><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></span>
