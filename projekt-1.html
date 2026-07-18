@@ -417,10 +417,18 @@
       overflow: hidden;
     }
 
-    .usage-visual svg {
+    .usage-visual img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: center;
       display: block;
+      filter: saturate(0.96) contrast(1.02);
+      transition: transform 0.45s ease;
+    }
+
+    .usage-card:hover .usage-visual img {
+      transform: scale(1.035);
     }
 
     .usage-content {
@@ -503,21 +511,8 @@
 
           <div class="usage-grid" aria-label="Flexible Nutzungsmöglichkeiten">
             <article class="usage-card">
-              <div class="usage-visual" aria-hidden="true">
-                <svg viewBox="0 0 420 260" role="img">
-                  <defs>
-                    <linearGradient id="warehouseGradient" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#223a58"/>
-                      <stop offset="100%" stop-color="#0b1829"/>
-                    </linearGradient>
-                  </defs>
-                  <rect width="420" height="260" rx="22" fill="url(#warehouseGradient)"/>
-                  <path d="M58 205h304V92L210 42 58 92v113Z" fill="rgba(255,255,255,0.08)" stroke="#e3c783" stroke-width="3"/>
-                  <path d="M100 205v-72h72v72M206 205v-92h114v92" fill="rgba(201,164,92,0.14)" stroke="#e3c783" stroke-width="3"/>
-                  <path d="M88 105h244M120 78v29M164 64v43M210 50v57M256 64v43M300 78v29" stroke="rgba(255,255,255,0.38)" stroke-width="2"/>
-                  <rect x="222" y="130" width="82" height="28" rx="4" fill="rgba(255,255,255,0.16)" stroke="#e3c783" stroke-width="2"/>
-                  <rect x="222" y="165" width="82" height="28" rx="4" fill="rgba(255,255,255,0.16)" stroke="#e3c783" stroke-width="2"/>
-                </svg>
+              <div class="usage-visual">
+                <img src="projekt-1-lager.jpg" alt="Moderne Gewerbehalle als Lagerfläche" />
               </div>
               <div class="usage-content">
                 <h3><span class="lang-de">Lagerhalle</span><span class="lang-en">Warehouse</span></h3>
@@ -526,21 +521,8 @@
             </article>
 
             <article class="usage-card">
-              <div class="usage-visual" aria-hidden="true">
-                <svg viewBox="0 0 420 260" role="img">
-                  <defs>
-                    <linearGradient id="showroomGradient" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#253d5c"/>
-                      <stop offset="100%" stop-color="#0b1829"/>
-                    </linearGradient>
-                  </defs>
-                  <rect width="420" height="260" rx="22" fill="url(#showroomGradient)"/>
-                  <rect x="62" y="60" width="296" height="146" rx="16" fill="rgba(255,255,255,0.08)" stroke="#e3c783" stroke-width="3"/>
-                  <path d="M88 96h244M88 134h244M88 172h244" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
-                  <circle cx="139" cy="135" r="31" fill="rgba(201,164,92,0.20)" stroke="#e3c783" stroke-width="3"/>
-                  <rect x="203" y="111" width="88" height="50" rx="10" fill="rgba(255,255,255,0.15)" stroke="#e3c783" stroke-width="3"/>
-                  <path d="M114 206h192" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
-                </svg>
+              <div class="usage-visual">
+                <img src="projekt-1-showroom.jpg" alt="Gewerbehalle als hochwertiger Showroom" />
               </div>
               <div class="usage-content">
                 <h3><span class="lang-de">Showroom</span><span class="lang-en">Showroom</span></h3>
@@ -549,21 +531,8 @@
             </article>
 
             <article class="usage-card">
-              <div class="usage-visual" aria-hidden="true">
-                <svg viewBox="0 0 420 260" role="img">
-                  <defs>
-                    <linearGradient id="officeGradient" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#263f60"/>
-                      <stop offset="100%" stop-color="#0b1829"/>
-                    </linearGradient>
-                  </defs>
-                  <rect width="420" height="260" rx="22" fill="url(#officeGradient)"/>
-                  <rect x="74" y="55" width="272" height="154" rx="18" fill="rgba(255,255,255,0.08)" stroke="#e3c783" stroke-width="3"/>
-                  <path d="M112 98h76M112 130h76M112 162h76" stroke="rgba(255,255,255,0.38)" stroke-width="3"/>
-                  <rect x="224" y="90" width="74" height="86" rx="10" fill="rgba(201,164,92,0.15)" stroke="#e3c783" stroke-width="3"/>
-                  <path d="M238 188h46M261 176v26" stroke="rgba(255,255,255,0.50)" stroke-width="3"/>
-                  <circle cx="260" cy="131" r="22" fill="rgba(255,255,255,0.16)" stroke="#e3c783" stroke-width="3"/>
-                </svg>
+              <div class="usage-visual">
+                <img src="projekt-1-buero.jpg" alt="Büroflächen als Teil einer autarken Gewerbeeinheit" />
               </div>
               <div class="usage-content">
                 <h3><span class="lang-de">Büro</span><span class="lang-en">Office</span></h3>
@@ -572,7 +541,7 @@
             </article>
           </div>
 
-          <div class="project-actions">
+<div class="project-actions">
             <a class="btn" href="index.html#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span> →</a>
             <a class="btn secondary" href="index.html#projects"><span class="lang-de">Alle Projekte ansehen</span><span class="lang-en">View all projects</span></a>
           </div>
