@@ -273,138 +273,175 @@
     }
 
   
-    /* Final: Textsatz, Ortspin, About-Card und einheitliche Projektkarten */
-    .justify {
+    /* Final: keine Silbentrennung, lesbarer Satz und saubere Projektkarten */
+    .no-hyphen,
+    .no-hyphen span {
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .justify.no-hyphen {
       text-align: justify;
-      hyphens: auto;
-      -webkit-hyphens: auto;
+      text-align-last: left;
     }
 
-    .services-copy {
-      max-width: 780px;
+    .about-copy,
+    .services-copy,
+    .contact-copy {
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
     }
 
-    .stat-icon {
-      color: var(--gold-light);
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 32px;
+    .contact-title {
+      max-width: 1120px !important;
+      font-size: clamp(1.65rem, 2.15vw, 2.45rem) !important;
+      line-height: 1.18 !important;
+      letter-spacing: -0.025em !important;
+      text-align: justify !important;
+      text-align-last: left !important;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
     }
 
-    .stat-icon svg {
-      width: 38px;
-      height: 38px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.85;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .about-grid {
-      align-items: center !important;
-    }
-
-    .about-copy {
-      max-width: 760px;
-    }
-
-    .about-card {
-      height: auto !important;
-      min-height: 460px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 36px;
-      padding-bottom: 36px;
-    }
-
-    .about-highlights {
-      gap: 16px;
-      margin-top: 26px;
-    }
-
-    .projects-head {
-      display: block !important;
-      margin-bottom: 50px;
-    }
-
-    .projects-head .section-text {
-      margin-top: 14px;
-      max-width: 760px;
-    }
-
-    .projects .section-title {
-      white-space: nowrap;
-      font-size: clamp(2rem, 3.55vw, 3.8rem);
+    .contact-copy {
+      max-width: 840px !important;
+      text-align: left !important;
     }
 
     .projects .project-card {
-      min-height: 500px;
+      min-height: 560px !important;
     }
 
     .projects .project-info {
       top: 150px !important;
+      left: 30px !important;
+      right: 30px !important;
       bottom: 30px !important;
       min-height: auto !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      justify-content: flex-start !important;
+      display: grid !important;
+      grid-template-rows: 44px 5.65em auto !important;
+      row-gap: 18px !important;
+      align-content: start !important;
+      align-items: start !important;
     }
 
     .projects .project-info .tag {
-      margin-bottom: 18px !important;
+      height: 44px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      align-self: start !important;
+      width: fit-content !important;
+      padding: 0 18px !important;
+      margin: 0 !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
     }
 
     .projects .project-info h3 {
-      min-height: 2.55em;
-      margin-bottom: 12px;
+      margin: 0 !important;
+      height: auto !important;
+      min-height: 0 !important;
+      display: block !important;
+      align-self: start !important;
+      font-size: clamp(2.15rem, 2.85vw, 3.45rem) !important;
+      line-height: 1.02 !important;
+      letter-spacing: -0.045em !important;
+      overflow: visible !important;
     }
 
     .projects .project-info p {
-      min-height: 5.4em;
-      max-width: 100%;
+      margin: 0 !important;
+      min-height: 0 !important;
+      height: auto !important;
+      max-width: 100% !important;
+      font-size: clamp(1rem, 1.23vw, 1.18rem) !important;
+      line-height: 1.52 !important;
+      overflow: visible !important;
     }
 
-    .contact-title {
-      max-width: 980px !important;
-      font-size: clamp(1.85rem, 2.65vw, 3rem) !important;
-      line-height: 1.14 !important;
-      letter-spacing: -0.035em !important;
-      text-align-last: left;
+    body.english .projects .project-info {
+      grid-template-rows: 44px 6.1em auto !important;
+    }
+
+    body.english .projects .project-info h3 {
+      font-size: clamp(1.9rem, 2.45vw, 3.05rem) !important;
+      line-height: 1.03 !important;
+      letter-spacing: -0.04em !important;
+    }
+
+    body.english .projects .project-info p {
+      font-size: clamp(0.96rem, 1.12vw, 1.08rem) !important;
+      line-height: 1.5 !important;
     }
 
     @media (max-width: 1100px) {
+      .projects .project-card {
+        min-height: 540px !important;
+      }
+
       .projects .project-info {
-        top: 140px !important;
+        top: 135px !important;
+        grid-template-rows: 44px auto auto !important;
+      }
+
+      body.english .projects .project-info {
+        grid-template-rows: 44px auto auto !important;
       }
     }
 
     @media (max-width: 920px) {
-      .about-card {
-        min-height: auto;
+      .contact-title {
+        text-align: left !important;
+        font-size: clamp(1.85rem, 7vw, 3rem) !important;
       }
 
-      .projects .section-title {
-        white-space: normal;
+      .justify.no-hyphen {
+        text-align: left;
       }
 
-      .projects .project-info h3,
-      .projects .project-info p {
-        min-height: auto;
+      .projects .project-info {
+        display: flex !important;
+        flex-direction: column !important;
+        row-gap: 0 !important;
+      }
+
+      .projects .project-info .tag {
+        margin-bottom: 18px !important;
+      }
+
+      .projects .project-info h3 {
+        margin-bottom: 12px !important;
       }
     }
 
     @media (max-width: 560px) {
       .projects .project-card {
-        min-height: 450px;
+        min-height: 500px !important;
       }
 
       .projects .project-info {
         top: 118px !important;
+        left: 22px !important;
+        right: 22px !important;
         bottom: 22px !important;
+      }
+
+      .projects .project-info .tag {
+        height: 40px !important;
+        padding: 0 14px !important;
+        font-size: 0.66rem !important;
+      }
+
+      .projects .project-info h3,
+      body.english .projects .project-info h3 {
+        font-size: clamp(1.75rem, 9vw, 2.55rem) !important;
       }
     }
 
@@ -457,7 +494,7 @@
         <div>
           <p class="section-kicker"><span class="lang-de">Über Buhlvest</span><span class="lang-en">About Buhlvest</span></p>
           <h2 class="section-title"><span class="lang-de">Qualität, Substanz und langfristiger Wert.</span><span class="lang-en">Quality, substance and long-term value.</span></h2>
-          <p class="section-text justify about-copy"><span class="lang-de">Seit über 20 Jahren entwickelt Buhlvest hochwertige Gewerbe-Immobilien im Großraum München. Unser Schwerpunkt liegt auf modernen und multifunktionalen Gewerbehallen, die durch eine durchdachte Planung, hochwertige Bauqualität und flexible Nutzungsmöglichkeiten überzeugen.
+          <p class="section-text justify no-hyphen about-copy"><span class="lang-de">Seit über 20 Jahren entwickelt Buhlvest hochwertige Gewerbe-Immobilien im Großraum München. Unser Schwerpunkt liegt auf modernen und multifunktionalen Gewerbehallen, die durch eine durchdachte Planung, hochwertige Bauqualität und flexible Nutzungsmöglichkeiten überzeugen.
 Dabei betrachten wir Immobilien nicht als kurzfristige Projekte, sondern als langfristige Werte. Nachhaltige Konzepte, funktionale Architektur und die individuellen Anforderungen unserer Kunden stehen deshalb von Beginn an im Mittelpunkt.
 Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und auch in Zukunft flexibel und zuverlässig genutzt werden können.</span><span class="lang-en">For more than 20 years, Buhlvest has been developing high-quality commercial properties across the greater Munich area. Our focus is on modern, multifunctional commercial buildings that combine thoughtful planning, high construction quality and flexible usage options. We do not view real estate as a short-term project, but as a long-term asset. Sustainable concepts, functional architecture and the individual requirements of our clients are therefore at the heart of every development from the very beginning. Our aim is to create commercial properties that meet today’s demands while remaining flexible, reliable and fit for future use.</span></p>
           <div class="stats">
@@ -493,7 +530,7 @@ Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und
       <div class="container">
         <p class="section-kicker"><span class="lang-de">Unsere Leistungen</span><span class="lang-en">Our Services</span></p>
         <h2 class="section-title"><span class="lang-de">Gewerbe-Immobilien durchdacht entwickelt.</span><span class="lang-en">Thoughtfully developed Commercial properties.</span></h2>
-        <p class="section-text justify services-copy"><span class="lang-de">Wir errichten Gewerbe-Immobilien von der ersten Konzeption bis zur fertigen, nutzbaren Lösung. Mit effizienter Planung, hochwertigen Materialien und einem klaren Blick für die Anforderungen unserer Kunden entstehen flexible und langfristig nutzbare Gewerbeobjekte.</span><span class="lang-en">We manage our projects from the initial concept through to the completed property. Efficient planning, high-quality materials and a clear understanding of our clients’ requirements enable us to create flexible commercial properties designed for long-term use.</span></p>
+        <p class="section-text justify no-hyphen services-copy"><span class="lang-de">Wir errichten Gewerbe-Immobilien von der ersten Konzeption bis zur fertigen, nutzbaren Lösung. Mit effizienter Planung, hochwertigen Materialien und einem klaren Blick für die Anforderungen unserer Kunden entstehen flexible und langfristig nutzbare Gewerbeobjekte.</span><span class="lang-en">We manage our projects from the initial concept through to the completed property. Efficient planning, high-quality materials and a clear understanding of our clients’ requirements enable us to create flexible commercial properties designed for long-term use.</span></p>
         <div class="cards">
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8l6 6v12" /><path d="M14 3v6h6" /><path d="M8 13h8M8 17h8" /></svg></div><h3><span class="lang-de">Projektentwicklung</span><span class="lang-en">Project Development</span></h3><p><span class="lang-de">Analyse, Konzeption und Entwicklung hochwertiger Gewerbestandorte mit Fokus auf Nutzbarkeit, Wertstabilität und Marktfähigkeit.</span><span class="lang-en">Analysis, concept and development of premium commercial locations with a focus on usability, value stability and marketability.</span></p></article>
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18" /><path d="M6 21V7h12v14" /><path d="M9 21v-5h6v5" /><path d="M8 10h2M14 10h2M8 13h2M14 13h2" /></svg></div><h3><span class="lang-de">Baumanagement</span><span class="lang-en">Construction Management</span></h3><p><span class="lang-de">Koordination, Qualitätskontrolle und Umsetzung anspruchsvoller Bauprojekte mit klarer Struktur und professioneller Steuerung.</span><span class="lang-en">Coordination, quality control and execution of demanding construction projects with clear structures and professional management.</span></p></article>
@@ -543,11 +580,11 @@ Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und
       <div class="container contact-grid">
         <div>
           <p class="section-kicker"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></p>
-          <h2 class="section-title contact-title justify">
+          <h2 class="section-title contact-title no-hyphen">
             <span class="lang-de">Gerne informieren wir Sie persönlich über unsere Gewerbeimmobilien, verfügbaren Flächen und geplanten Projekte.</span>
             <span class="lang-en">We would be pleased to provide you with further information about our commercial properties, available spaces and upcoming projects.</span>
           </h2>
-          <p class="section-text"><span class="lang-de">Ob Kauf, Miete oder Investment – wir freuen uns auf Ihre Anfrage.</span><span class="lang-en">Whether acquisition, leasing or investment — we look forward to your enquiry.</span></p>
+          <p class="section-text no-hyphen contact-copy"><span class="lang-de">Ob Kauf, Miete oder Investment – wir freuen uns auf Ihre Anfrage.</span><span class="lang-en">Whether acquisition, leasing or investment — we look forward to your enquiry.</span></p>
           <div class="contact-details">
             <div class="detail"><strong><span class="lang-de">Adresse</span><span class="lang-en">Address</span></strong><span>Karwendelstr. 16, 82024 Taufkirchen (Landkreis München)</span></div>
             <div class="detail"><strong><span class="lang-de">Telefon</span><span class="lang-en">Phone</span></strong><a href="tel:+4915112333340">0049 151 12333340</a></div>
