@@ -362,14 +362,23 @@
     }
 
   
-    /* Projekt 3 Feinschliff */
-    .project-detail-hero {
-      background-position: center center !important;
+    /* Projekt 3 Blocksatz ohne Silbentrennung */
+    .project-detail-subtitle,
+    .project-copy p,
+    .facts-list li > span,
+    .mini-project h3 {
+      text-align: justify;
+      text-align-last: left;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
     }
 
-    .project-copy p,
-    .facts-list span,
-    .project-detail-subtitle {
+    .project-detail-subtitle span,
+    .project-copy p span,
+    .facts-list li > span span,
+    .mini-project h3 span {
       hyphens: none !important;
       -webkit-hyphens: none !important;
       word-break: normal !important;
@@ -377,11 +386,17 @@
     }
 
     .facts-list li > span {
-      text-align: right;
       max-width: 58%;
     }
 
     @media (max-width: 700px) {
+      .project-detail-subtitle,
+      .project-copy p,
+      .facts-list li > span,
+      .mini-project h3 {
+        text-align: left;
+      }
+
       .facts-list li {
         display: block;
       }
@@ -389,7 +404,6 @@
       .facts-list li > span {
         display: block;
         max-width: none;
-        text-align: left;
         margin-top: 6px;
       }
     }
