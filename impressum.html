@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Buhlvest GmbH</title>
+  <meta name="description" content="Impressum der Buhlvest GmbH." />
+  <style>
+
+:root {
+  --navy: #07111f;
+  --navy-2: #0b1829;
+  --navy-3: #102238;
+  --gold: #c9a45c;
+  --gold-light: #e3c783;
+  --white: #ffffff;
+  --muted: #aeb8c5;
+  --line: rgba(255, 255, 255, 0.12);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  --radius: 22px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+.lang-en { display: none; }
+body.english .lang-de { display: none; }
+body.english .lang-en { display: inline; }
+body.english .block.lang-en { display: block; }
+body.english .block.lang-de { display: none; }
+.block.lang-en { display: none; }
+.container { width: min(1040px, calc(100% - 40px)); margin: 0 auto; }
+
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 1000;
+  background: rgba(7, 17, 31, 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 14px; min-width: max-content; }
+.brand img { width: 54px; height: 54px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(201,164,92,0.28); }
+.brand-name { font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--gold-light); }
+.nav-links { display: flex; align-items: center; gap: 28px; font-size: 0.92rem; color: rgba(255,255,255,0.82); }
+.nav-links a { position: relative; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--white); }
+.language-toggle { display: flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 5px; background: rgba(255,255,255,0.06); }
+.language-toggle button { border: 0; color: rgba(255,255,255,0.72); background: transparent; padding: 7px 10px; border-radius: 999px; cursor: pointer; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; }
+.language-toggle button.active { background: var(--gold); color: #08101c; }
+.menu-button { display: none; width: 46px; height: 46px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,0.06); color: var(--white); cursor: pointer; align-items: center; justify-content: center; }
+.menu-button span { width: 20px; height: 2px; background: currentColor; display: block; position: relative; }
+.menu-button span::before, .menu-button span::after { content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; }
+.menu-button span::before { top: -7px; }
+.menu-button span::after { top: 7px; }
+
+.legal-hero {
+  padding: 160px 0 78px;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(201,164,92,0.16), transparent 32%),
+    linear-gradient(180deg, var(--navy), var(--navy-2));
+  border-bottom: 1px solid var(--line);
+}
+.section-kicker {
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  font-size: 0.78rem;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: clamp(2.6rem, 5.4vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  margin-bottom: 22px;
+}
+.legal-intro {
+  color: rgba(255,255,255,0.82);
+  max-width: 760px;
+  font-size: 1.08rem;
+}
+.legal-section {
+  padding: 82px 0 110px;
+  background: var(--navy);
+}
+.legal-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.03));
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+.legal-card h2 {
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+}
+.legal-card h3 {
+  color: var(--gold-light);
+  font-size: 1.02rem;
+  margin: 22px 0 8px;
+}
+.legal-card p,
+.legal-card li,
+.legal-intro {
+  color: var(--muted);
+  margin-bottom: 12px;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+.legal-card ul { padding-left: 20px; margin: 10px 0 6px; }
+.legal-card a { color: var(--gold-light); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 34px 0;
+  background: #050b14;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-links a:hover { color: var(--gold-light); }
+
+@media (max-width: 920px) {
+  .menu-button { display: inline-flex; }
+  .nav-links {
+    position: fixed; left: 20px; right: 20px; top: 92px; display: none;
+    flex-direction: column; align-items: stretch; padding: 22px; border-radius: 22px;
+    background: rgba(7,17,31,0.97); border: 1px solid var(--line); box-shadow: var(--shadow);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 10px 0; }
+  .language-toggle { align-self: start; }
+  .legal-card p,
+  .legal-card li,
+  .legal-intro { text-align: left; }
+}
+@media (max-width: 560px) {
+  .container { width: min(100% - 28px, 1040px); }
+  .nav { height: 72px; }
+  .brand img { width: 46px; height: 46px; }
+  .brand-name { font-size: 0.9rem; letter-spacing: 0.16em; }
+  .legal-hero { padding-top: 132px; }
+  .legal-card { padding: 26px; }
+}
+
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a class="brand" href="index.html#home" aria-label="Buhlvest Startseite">
+      <img src="logo.png" alt="Buhlvest Logo" />
+      <span class="brand-name">Buhlvest</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Hauptnavigation">
+      <a href="index.html#home"><span class="lang-de">Startseite</span><span class="lang-en">Home</span></a>
+      <a href="index.html#about"><span class="lang-de">Über uns</span><span class="lang-en">About</span></a>
+      <a href="index.html#services"><span class="lang-de">Leistungen</span><span class="lang-en">Services</span></a>
+      <a href="index.html#projects"><span class="lang-de">Projekte</span><span class="lang-en">Projects</span></a>
+      <a href="index.html#contact"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></a>
+      <div class="language-toggle" aria-label="Sprache wechseln">
+        <button type="button" class="active" id="deBtn">DE</button>
+        <button type="button" id="enBtn">EN</button>
+      </div>
+    </nav>
+    <button class="menu-button" id="menuButton" aria-label="Menü öffnen" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="legal-hero">
+    <div class="container">
+      <p class="section-kicker"><span class="lang-de">Rechtliches</span><span class="lang-en">Legal</span></p>
+      <h1><span class="lang-de">Impressum</span><span class="lang-en">Legal Notice</span></h1>
+      <p class="legal-intro"><span class="lang-de">Anbieterkennzeichnung und Kontaktinformationen der Buhlvest GmbH.</span><span class="lang-en">Provider identification and contact information of Buhlvest GmbH.</span></p>
+    </div>
+  </section>
+
+  <section class="legal-section">
+    <div class="container">
+
+      <div class="legal-card">
+        <h2><span class="lang-de">Angaben gemäß § 5 DDG</span><span class="lang-en">Information according to Section 5 DDG</span></h2>
+        <p><strong>Buhlvest GmbH</strong></p>
+        <p>Karwendelstraße 16<br />82024 Taufkirchen<br /><span class="lang-de">Deutschland</span><span class="lang-en">Germany</span></p>
+
+        <h3><span class="lang-de">Vertreten durch</span><span class="lang-en">Represented by</span></h3>
+        <p><span class="lang-de">Geschäftsführer: Michael Buhl</span><span class="lang-en">Managing Director: Michael Buhl</span></p>
+
+        <h3><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></h3>
+        <p>
+          <span class="lang-de">Telefon:</span><span class="lang-en">Phone:</span> <a href="tel:+4915112333340">0049 151 12333340</a><br />
+          E-Mail: <a href="mailto:info@buhlvest.de">info@buhlvest.de</a>
+        </p>
+
+        <h3><span class="lang-de">Registereintrag</span><span class="lang-en">Commercial register</span></h3>
+        <p>
+          <span class="lang-de">Eingetragen im Handelsregister.</span><span class="lang-en">Registered in the commercial register.</span><br />
+          <span class="lang-de">Registergericht:</span><span class="lang-en">Register court:</span> Amtsgericht München<br />
+          <span class="lang-de">Registernummer:</span><span class="lang-en">Registration number:</span> HRB 209960
+        </p>
+        <!-- Falls eine Umsatzsteuer-Identifikationsnummer nach § 27a UStG vorhanden ist, sollte sie hier zusätzlich sichtbar ergänzt werden. -->
+      </div>
+
+      <div class="legal-card">
+        <h2><span class="lang-de">Streitbeilegung</span><span class="lang-en">Dispute resolution</span></h2>
+        <p><span class="lang-de">Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</span><span class="lang-en">We are neither obliged nor willing to participate in dispute resolution proceedings before a consumer arbitration board.</span></p>
+      </div>
+
+      <div class="legal-card">
+        <h2><span class="lang-de">Haftung für Inhalte</span><span class="lang-en">Liability for content</span></h2>
+        <p><span class="lang-de">Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr.</span><span class="lang-en">The content of this website has been created with great care. However, we cannot guarantee the accuracy, completeness or timeliness of the content.</span></p>
+      </div>
+
+      <div class="legal-card">
+        <h2><span class="lang-de">Haftung für Links</span><span class="lang-en">Liability for links</span></h2>
+        <p><span class="lang-de">Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</span><span class="lang-en">This website may contain links to external third-party websites over whose content we have no control. We therefore assume no liability for such external content. The respective provider or operator of the linked pages is always responsible for their content.</span></p>
+      </div>
+
+      <div class="legal-card">
+        <h2><span class="lang-de">Urheberrecht</span><span class="lang-en">Copyright</span></h2>
+        <p><span class="lang-de">Die auf dieser Website veröffentlichten Inhalte, Texte, Bilder und Gestaltungen unterliegen dem deutschen Urheberrecht. Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen schriftlichen Zustimmung des jeweiligen Rechteinhabers.</span><span class="lang-en">The content, text, images and design published on this website are subject to German copyright law. Any use beyond the limits of copyright law requires the prior written consent of the respective rights holder.</span></p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Buhlvest GmbH. <span class="lang-de">Alle Rechte vorbehalten.</span><span class="lang-en">All rights reserved.</span></p>
+    <div class="footer-links">
+      <a href="impressum.html"><span class="lang-de">Impressum</span><span class="lang-en">Legal Notice</span></a>
+      <a href="datenschutz.html"><span class="lang-de">Datenschutzerklärung</span><span class="lang-en">Privacy Policy</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuButton = document.getElementById("menuButton");
+  const navLinks = document.getElementById("navLinks");
+  const deBtn = document.getElementById("deBtn");
+  const enBtn = document.getElementById("enBtn");
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  function setLanguage(language) {
+    const isEnglish = language === "en";
+    document.body.classList.toggle("english", isEnglish);
+    deBtn.classList.toggle("active", !isEnglish);
+    enBtn.classList.toggle("active", isEnglish);
+    document.documentElement.lang = isEnglish ? "en" : "de";
+    localStorage.setItem("buhlvest-language", language);
+  }
+
+  deBtn.addEventListener("click", () => setLanguage("de"));
+  enBtn.addEventListener("click", () => setLanguage("en"));
+
+  setLanguage(localStorage.getItem("buhlvest-language") || "de");
+</script>
+
+</body>
+</html>
