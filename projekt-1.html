@@ -362,6 +362,100 @@
       }
     }
 
+  
+    /* Projekt 1 Nutzungskarten */
+    .detail-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .project-copy {
+      max-width: none;
+    }
+
+    .project-copy > p,
+    .project-detail-subtitle,
+    .usage-content p {
+      text-align: justify;
+      text-align-last: left;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .project-copy > p span,
+    .project-detail-subtitle span,
+    .usage-content p span {
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 52px 0 36px;
+    }
+
+    .usage-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .usage-visual {
+      aspect-ratio: 16 / 10;
+      border-bottom: 1px solid var(--line);
+      background: var(--navy-3);
+      overflow: hidden;
+    }
+
+    .usage-visual svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .usage-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .usage-content h3 {
+      font-size: 1.32rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+
+    .usage-content p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.58;
+      margin: 0;
+    }
+
+    @media (max-width: 980px) {
+      .usage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-copy > p,
+      .project-detail-subtitle,
+      .usage-content p {
+        text-align: left;
+      }
+    }
+
   </style>
 </head>
 
@@ -406,21 +500,83 @@
           <h2 class="section-title"><span class="lang-de">2020 entstanden autarke Gewerbehallen für flexible Nutzungen.</span><span class="lang-en">Completed in 2020, these self-contained commercial units offer flexible usage options.</span></h2>
           <p><span class="lang-de">Dieses Referenzprojekt steht exemplarisch für den Anspruch von Buhlvest: moderne Gewerbeflächen, klare Architektur und flexible Nutzungsmöglichkeiten in einem starken wirtschaftlichen Umfeld.</span></p><p><span class="lang-de">Der Fokus liegt auf funktionalen Flächen, hochwertiger Ausführung und einer Immobilie, die für unterschiedliche gewerbliche Anforderungen langfristig nutzbar bleibt.</span></p>
           <p><span class="lang-en">This reference project represents Buhlvest’s core approach: modern commercial space, clear architecture and flexible usage options in a strong economic environment.</span></p><p><span class="lang-en">The focus is on functional areas, high-quality execution and a property designed to remain suitable for a wide range of commercial requirements over the long term.</span></p>
+
+          <div class="usage-grid" aria-label="Flexible Nutzungsmöglichkeiten">
+            <article class="usage-card">
+              <div class="usage-visual" aria-hidden="true">
+                <svg viewBox="0 0 420 260" role="img">
+                  <defs>
+                    <linearGradient id="warehouseGradient" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#223a58"/>
+                      <stop offset="100%" stop-color="#0b1829"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="420" height="260" rx="22" fill="url(#warehouseGradient)"/>
+                  <path d="M58 205h304V92L210 42 58 92v113Z" fill="rgba(255,255,255,0.08)" stroke="#e3c783" stroke-width="3"/>
+                  <path d="M100 205v-72h72v72M206 205v-92h114v92" fill="rgba(201,164,92,0.14)" stroke="#e3c783" stroke-width="3"/>
+                  <path d="M88 105h244M120 78v29M164 64v43M210 50v57M256 64v43M300 78v29" stroke="rgba(255,255,255,0.38)" stroke-width="2"/>
+                  <rect x="222" y="130" width="82" height="28" rx="4" fill="rgba(255,255,255,0.16)" stroke="#e3c783" stroke-width="2"/>
+                  <rect x="222" y="165" width="82" height="28" rx="4" fill="rgba(255,255,255,0.16)" stroke="#e3c783" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="usage-content">
+                <h3><span class="lang-de">Lagerhalle</span><span class="lang-en">Warehouse</span></h3>
+                <p><span class="lang-de">Autarke Einheiten schaffen klare Abläufe, eigene Zugänge und flexible Flächen für Lagerung, Logistik und betriebliche Prozesse.</span><span class="lang-en">Self-contained units provide clear workflows, dedicated access and flexible space for storage, logistics and operational processes.</span></p>
+              </div>
+            </article>
+
+            <article class="usage-card">
+              <div class="usage-visual" aria-hidden="true">
+                <svg viewBox="0 0 420 260" role="img">
+                  <defs>
+                    <linearGradient id="showroomGradient" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#253d5c"/>
+                      <stop offset="100%" stop-color="#0b1829"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="420" height="260" rx="22" fill="url(#showroomGradient)"/>
+                  <rect x="62" y="60" width="296" height="146" rx="16" fill="rgba(255,255,255,0.08)" stroke="#e3c783" stroke-width="3"/>
+                  <path d="M88 96h244M88 134h244M88 172h244" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
+                  <circle cx="139" cy="135" r="31" fill="rgba(201,164,92,0.20)" stroke="#e3c783" stroke-width="3"/>
+                  <rect x="203" y="111" width="88" height="50" rx="10" fill="rgba(255,255,255,0.15)" stroke="#e3c783" stroke-width="3"/>
+                  <path d="M114 206h192" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
+                </svg>
+              </div>
+              <div class="usage-content">
+                <h3><span class="lang-de">Showroom</span><span class="lang-en">Showroom</span></h3>
+                <p><span class="lang-de">Die Hallen lassen sich repräsentativ nutzen – ideal für Produktpräsentation, Kundenempfang und eine sichtbare Markeninszenierung.</span><span class="lang-en">The units can be used representatively — ideal for product presentation, client reception and visible brand staging.</span></p>
+              </div>
+            </article>
+
+            <article class="usage-card">
+              <div class="usage-visual" aria-hidden="true">
+                <svg viewBox="0 0 420 260" role="img">
+                  <defs>
+                    <linearGradient id="officeGradient" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#263f60"/>
+                      <stop offset="100%" stop-color="#0b1829"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="420" height="260" rx="22" fill="url(#officeGradient)"/>
+                  <rect x="74" y="55" width="272" height="154" rx="18" fill="rgba(255,255,255,0.08)" stroke="#e3c783" stroke-width="3"/>
+                  <path d="M112 98h76M112 130h76M112 162h76" stroke="rgba(255,255,255,0.38)" stroke-width="3"/>
+                  <rect x="224" y="90" width="74" height="86" rx="10" fill="rgba(201,164,92,0.15)" stroke="#e3c783" stroke-width="3"/>
+                  <path d="M238 188h46M261 176v26" stroke="rgba(255,255,255,0.50)" stroke-width="3"/>
+                  <circle cx="260" cy="131" r="22" fill="rgba(255,255,255,0.16)" stroke="#e3c783" stroke-width="3"/>
+                </svg>
+              </div>
+              <div class="usage-content">
+                <h3><span class="lang-de">Büro</span><span class="lang-en">Office</span></h3>
+                <p><span class="lang-de">Bei Bedarf können Büro- und Verwaltungsbereiche integriert werden – funktional getrennt und dennoch direkt am eigenen Standort.</span><span class="lang-en">Office and administrative areas can be integrated where required — functionally separated yet directly connected to the user’s own location.</span></p>
+              </div>
+            </article>
+          </div>
+
           <div class="project-actions">
             <a class="btn" href="index.html#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span> →</a>
             <a class="btn secondary" href="index.html#projects"><span class="lang-de">Alle Projekte ansehen</span><span class="lang-en">View all projects</span></a>
           </div>
         </div>
-
-        <aside class="facts-card">
-          <p class="section-kicker"><span class="lang-de">Eckdaten</span><span class="lang-en">Key Facts</span></p>
-          <ul class="facts-list">
-            <li><strong><span class="lang-de">Status</span><span class="lang-en">Status</span></strong><span><span class="lang-de">Referenzprojekt</span><span class="lang-en">Reference project</span></span></li>
-            <li><strong><span class="lang-de">Standort</span><span class="lang-en">Location</span></strong><span>Putzbrunn bei München</span></li>
-            <li><strong><span class="lang-de">Nutzung</span><span class="lang-en">Use</span></strong><span><span class="lang-de">Gewerbeimmobilie</span><span class="lang-en">Commercial property</span></span></li>
-            <li><strong><span class="lang-de">Flächen</span><span class="lang-en">Areas</span></strong><span><span class="lang-de">Angaben folgen</span><span class="lang-en">To be added</span></span></li>
-          </ul>
-        </aside>
       </div>
     </section>
 
