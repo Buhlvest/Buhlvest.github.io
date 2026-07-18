@@ -273,32 +273,15 @@
     }
 
   
-    /* Anpassungen: Ortspin, Blocksatz, About-Card-Höhe und Projektüberschrift */
+    /* Final: Textsatz, Ortspin, About-Card und einheitliche Projektkarten */
     .justify {
       text-align: justify;
       hyphens: auto;
       -webkit-hyphens: auto;
     }
 
-    .about-grid {
-      align-items: stretch !important;
-    }
-
-    .about-grid > div:first-child {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .about-copy {
-      max-width: 760px;
-    }
-
-    .about-card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
+    .services-copy {
+      max-width: 780px;
     }
 
     .stat-icon {
@@ -319,18 +302,109 @@
       stroke-linejoin: round;
     }
 
+    .about-grid {
+      align-items: center !important;
+    }
+
+    .about-copy {
+      max-width: 760px;
+    }
+
+    .about-card {
+      height: auto !important;
+      min-height: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+
+    .about-highlights {
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .projects-head {
+      display: block !important;
+      margin-bottom: 50px;
+    }
+
+    .projects-head .section-text {
+      margin-top: 14px;
+      max-width: 760px;
+    }
+
     .projects .section-title {
       white-space: nowrap;
       font-size: clamp(2rem, 3.55vw, 3.8rem);
     }
 
+    .projects .project-card {
+      min-height: 500px;
+    }
+
+    .projects .project-info {
+      top: 150px !important;
+      bottom: 30px !important;
+      min-height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
+
+    .projects .project-info .tag {
+      margin-bottom: 18px !important;
+    }
+
+    .projects .project-info h3 {
+      min-height: 2.55em;
+      margin-bottom: 12px;
+    }
+
+    .projects .project-info p {
+      min-height: 5.4em;
+      max-width: 100%;
+    }
+
+    .contact-title {
+      max-width: 980px !important;
+      font-size: clamp(1.85rem, 2.65vw, 3rem) !important;
+      line-height: 1.14 !important;
+      letter-spacing: -0.035em !important;
+      text-align-last: left;
+    }
+
+    @media (max-width: 1100px) {
+      .projects .project-info {
+        top: 140px !important;
+      }
+    }
+
     @media (max-width: 920px) {
       .about-card {
-        min-height: 360px;
+        min-height: auto;
       }
 
       .projects .section-title {
         white-space: normal;
+      }
+
+      .projects .project-info h3,
+      .projects .project-info p {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .projects .project-card {
+        min-height: 450px;
+      }
+
+      .projects .project-info {
+        top: 118px !important;
+        bottom: 22px !important;
       }
     }
 
@@ -419,7 +493,7 @@ Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und
       <div class="container">
         <p class="section-kicker"><span class="lang-de">Unsere Leistungen</span><span class="lang-en">Our Services</span></p>
         <h2 class="section-title"><span class="lang-de">Gewerbe-Immobilien durchdacht entwickelt.</span><span class="lang-en">Thoughtfully developed Commercial properties.</span></h2>
-        <p class="section-text"><span class="lang-de">Wir errichten Gewerbe-Immobilien von der ersten Konzeption bis zur fertigen, nutzbaren Lösung. Mit effizienter Planung, hochwertigen Materialien und einem klaren Blick für die Anforderungen unserer Kunden entstehen flexible und langfristig nutzbare Gewerbeobjekte.</span><span class="lang-en">We manage our projects from the initial concept through to the completed property. Efficient planning, high-quality materials and a clear understanding of our clients’ requirements enable us to create flexible commercial properties designed for long-term use.</span></p>
+        <p class="section-text justify services-copy"><span class="lang-de">Wir errichten Gewerbe-Immobilien von der ersten Konzeption bis zur fertigen, nutzbaren Lösung. Mit effizienter Planung, hochwertigen Materialien und einem klaren Blick für die Anforderungen unserer Kunden entstehen flexible und langfristig nutzbare Gewerbeobjekte.</span><span class="lang-en">We manage our projects from the initial concept through to the completed property. Efficient planning, high-quality materials and a clear understanding of our clients’ requirements enable us to create flexible commercial properties designed for long-term use.</span></p>
         <div class="cards">
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8l6 6v12" /><path d="M14 3v6h6" /><path d="M8 13h8M8 17h8" /></svg></div><h3><span class="lang-de">Projektentwicklung</span><span class="lang-en">Project Development</span></h3><p><span class="lang-de">Analyse, Konzeption und Entwicklung hochwertiger Gewerbestandorte mit Fokus auf Nutzbarkeit, Wertstabilität und Marktfähigkeit.</span><span class="lang-en">Analysis, concept and development of premium commercial locations with a focus on usability, value stability and marketability.</span></p></article>
           <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18" /><path d="M6 21V7h12v14" /><path d="M9 21v-5h6v5" /><path d="M8 10h2M14 10h2M8 13h2M14 13h2" /></svg></div><h3><span class="lang-de">Baumanagement</span><span class="lang-en">Construction Management</span></h3><p><span class="lang-de">Koordination, Qualitätskontrolle und Umsetzung anspruchsvoller Bauprojekte mit klarer Struktur und professioneller Steuerung.</span><span class="lang-en">Coordination, quality control and execution of demanding construction projects with clear structures and professional management.</span></p></article>
@@ -448,17 +522,17 @@ Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und
             <img src="hero.jpg" alt="Weiteres Referenzprojekt von Buhlvest" />
             <div class="project-info">
               <span class="tag"><span class="lang-de">Referenzprojekt 2</span><span class="lang-en">Featured Project 2</span></span>
-              <h3><span class="lang-de">Weitere Gewerbeimmobilie im Großraum München</span><span class="lang-en">Additional Commercial Property in the Greater Munich Area</span></h3>
-              <p><span class="lang-de">Hier können später Projektbild, Standort, Flächenangaben und weitere Details zum zweiten Referenzprojekt ergänzt werden.</span><span class="lang-en">Project image, location, floor area and further details for the second reference project can be added here later.</span></p>
+              <h3><span class="lang-de">Moderne Gewerbeflächen in Putzbrunn bei München</span><span class="lang-en">Modern Commercial Spaces in Putzbrunn near Munich</span></h3>
+              <p><span class="lang-de">Repräsentative Architektur, flexible Nutzflächen und hochwertige Ausführung für anspruchsvolle gewerbliche Nutzung.</span><span class="lang-en">Representative architecture, flexible usable space and high-quality execution for demanding commercial use.</span></p>
             </div>
           </a>
 
-          <a class="project-card" href="projekt-3.html" aria-label="Geplantes Projekt 3 öffnen">
-            <img src="hero.jpg" alt="Geplantes Gewerbeprojekt von Buhlvest" />
+          <a class="project-card" href="projekt-3.html" aria-label="Geplantes Projekt 2027 öffnen">
+            <img src="hero.jpg" alt="Geplante Gewerbehallen von Buhlvest in Taufkirchen bei München" />
             <div class="project-info">
-              <span class="tag"><span class="lang-de">Geplantes Projekt 3</span><span class="lang-en">Planned Project 3</span></span>
-              <h3><span class="lang-de">Geplantes Gewerbeprojekt</span><span class="lang-en">Planned Commercial Development</span></h3>
-              <p><span class="lang-de">Ein geplanter Standort für zukünftige gewerbliche Nutzung. Weitere Informationen können nach Projektfortschritt ergänzt werden.</span><span class="lang-en">A planned location for future commercial use. Further information can be added as the project progresses.</span></p>
+              <span class="tag"><span class="lang-de">Geplantes Projekt 2027</span><span class="lang-en">Planned Project 2027</span></span>
+              <h3><span class="lang-de">Gewerbehallen in Taufkirchen bei München</span><span class="lang-en">Commercial Halls in Taufkirchen near Munich</span></h3>
+              <p><span class="lang-de">Moderne Gewerbehalle in Taufkirchen bei München – hochwertig, flexibel nutzbar und optimal angebunden. Geplante Fertigstellung: 2027.</span><span class="lang-en">Modern commercial hall in Taufkirchen near Munich — high-quality, flexible in use and ideally connected. Planned completion: 2027.</span></p>
             </div>
           </a>
         </div>
@@ -469,9 +543,9 @@ Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und
       <div class="container contact-grid">
         <div>
           <p class="section-kicker"><span class="lang-de">Kontakt</span><span class="lang-en">Contact</span></p>
-          <h2 class="section-title contact-title">
-            <span class="lang-de">Gerne informieren wir Sie persönlich über unsere<br>Gewerbeimmobilien, verfügbaren Flächen und geplanten Projekte.</span>
-            <span class="lang-en">We would be pleased to provide you with further information about our<br>commercial properties, available spaces and upcoming projects.</span>
+          <h2 class="section-title contact-title justify">
+            <span class="lang-de">Gerne informieren wir Sie persönlich über unsere Gewerbeimmobilien, verfügbaren Flächen und geplanten Projekte.</span>
+            <span class="lang-en">We would be pleased to provide you with further information about our commercial properties, available spaces and upcoming projects.</span>
           </h2>
           <p class="section-text"><span class="lang-de">Ob Kauf, Miete oder Investment – wir freuen uns auf Ihre Anfrage.</span><span class="lang-en">Whether acquisition, leasing or investment — we look forward to your enquiry.</span></p>
           <div class="contact-details">
