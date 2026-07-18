@@ -272,6 +272,68 @@
       }
     }
 
+  
+    /* Anpassungen: Ortspin, Blocksatz, About-Card-Höhe und Projektüberschrift */
+    .justify {
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    .about-grid {
+      align-items: stretch !important;
+    }
+
+    .about-grid > div:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-copy {
+      max-width: 760px;
+    }
+
+    .about-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .stat-icon {
+      color: var(--gold-light);
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 32px;
+    }
+
+    .stat-icon svg {
+      width: 38px;
+      height: 38px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.85;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .projects .section-title {
+      white-space: nowrap;
+      font-size: clamp(2rem, 3.55vw, 3.8rem);
+    }
+
+    @media (max-width: 920px) {
+      .about-card {
+        min-height: 360px;
+      }
+
+      .projects .section-title {
+        white-space: normal;
+      }
+    }
+
   </style>
 </head>
 
@@ -312,6 +374,7 @@
             <span class="hero-subline">Premium Commercial Real Estate</span>
           </span>
         </h1>
+        <p class="hero-subtitle"><span class="lang-de">Ihr Partner für hochwertige Gewerbe-Immobilien.</span><span class="lang-en">Your partner for premium commercial real estate developments.</span></p>
         <a class="btn" href="#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span><span aria-hidden="true">→</span></a>
       </div>
     </section>
@@ -321,12 +384,20 @@
         <div>
           <p class="section-kicker"><span class="lang-de">Über Buhlvest</span><span class="lang-en">About Buhlvest</span></p>
           <h2 class="section-title"><span class="lang-de">Qualität, Substanz und langfristiger Wert.</span><span class="lang-en">Quality, substance and long-term value.</span></h2>
-          <p class="section-text"><span class="lang-de">Seit über 20 Jahren entwickelt Buhlvest hochwertige Gewerbe-Immobilien im Großraum München. Unser Schwerpunkt liegt auf modernen und multifunktionalen Gewerbehallen, die durch eine durchdachte Planung, hochwertige Bauqualität und flexible Nutzungsmöglichkeiten überzeugen.
+          <p class="section-text justify about-copy"><span class="lang-de">Seit über 20 Jahren entwickelt Buhlvest hochwertige Gewerbe-Immobilien im Großraum München. Unser Schwerpunkt liegt auf modernen und multifunktionalen Gewerbehallen, die durch eine durchdachte Planung, hochwertige Bauqualität und flexible Nutzungsmöglichkeiten überzeugen.
 Dabei betrachten wir Immobilien nicht als kurzfristige Projekte, sondern als langfristige Werte. Nachhaltige Konzepte, funktionale Architektur und die individuellen Anforderungen unserer Kunden stehen deshalb von Beginn an im Mittelpunkt.
 Unser Anspruch ist es, Gewerbe-Immobilien zu schaffen, die heute überzeugen und auch in Zukunft flexibel und zuverlässig genutzt werden können.</span><span class="lang-en">For more than 20 years, Buhlvest has been developing high-quality commercial properties across the greater Munich area. Our focus is on modern, multifunctional commercial buildings that combine thoughtful planning, high construction quality and flexible usage options. We do not view real estate as a short-term project, but as a long-term asset. Sustainable concepts, functional architecture and the individual requirements of our clients are therefore at the heart of every development from the very beginning. Our aim is to create commercial properties that meet today’s demands while remaining flexible, reliable and fit for future use.</span></p>
           <div class="stats">
             <div class="stat"><strong>20+</strong><span><span class="lang-de">Jahre Erfahrung</span><span class="lang-en">Years of experience</span></span></div>
-            <div class="stat"><strong>MUC</strong><span><span class="lang-de">Fokus München</span><span class="lang-en">Munich focus</span></span></div>
+            <div class="stat">
+              <strong class="stat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21s-6-5.33-6-11a6 6 0 1 1 12 0c0 5.67-6 11-6 11z"></path>
+                  <circle cx="12" cy="10" r="2.5"></circle>
+                </svg>
+              </strong>
+              <span><span class="lang-de">Fokus München</span><span class="lang-en">Munich focus</span></span>
+            </div>
             <div class="stat"><strong>360°</strong><span><span class="lang-de">Von der Standortentwicklung bis zur schlüsselfertigen Gewerbeimmobilie</span><span class="lang-en">From site development to a turnkey commercial property</span></span></div>
           </div>
         </div>
