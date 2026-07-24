@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moderne Gewerbehallen in Putzbrunn bei München – Buhlvest</title>
-  <meta name="description" content="Ein zweites Referenzprojekt zur Darstellung weiterer hochwertiger Gewerbeentwicklung." />
+  <title>Moderne Gewerbeflächen in Putzbrunn bei München – Buhlvest</title>
+  <meta name="description" content="Repräsentative Architektur, flexible Nutzflächen und hochwertige Ausführung für anspruchsvolle gewerbliche Nutzung." />
   <style>
 
     :root {
@@ -206,7 +206,7 @@
       background:
         linear-gradient(180deg, rgba(7,17,31,0.52), rgba(7,17,31,0.94)),
         linear-gradient(90deg, rgba(7,17,31,0.90), rgba(7,17,31,0.30), rgba(7,17,31,0.84)),
-        url("hero.jpg") center / cover no-repeat;
+        url("projekt-2-titel.jpg") center / cover no-repeat;
       border-bottom: 1px solid var(--line);
     }
 
@@ -362,6 +362,108 @@
       }
     }
 
+  
+    /* Projekt 2 Nutzungskarten */
+    .detail-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .project-copy {
+      max-width: none;
+    }
+
+    .project-copy > p,
+    .project-detail-subtitle,
+    .usage-content p {
+      text-align: justify;
+      text-align-last: left;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .project-copy > p span,
+    .project-detail-subtitle span,
+    .usage-content p span {
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+    }
+
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 52px 0 36px;
+    }
+
+    .usage-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .usage-visual {
+      aspect-ratio: 16 / 10;
+      border-bottom: 1px solid var(--line);
+      background: var(--navy-3);
+      overflow: hidden;
+    }
+
+    .usage-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(0.96) contrast(1.02);
+      transition: transform 0.45s ease;
+    }
+
+    .usage-card:hover .usage-visual img {
+      transform: scale(1.035);
+    }
+
+    .usage-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .usage-content h3 {
+      font-size: 1.32rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+
+    .usage-content p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.58;
+      margin: 0;
+    }
+
+    @media (max-width: 980px) {
+      .usage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-copy > p,
+      .project-detail-subtitle,
+      .usage-content p {
+        text-align: left;
+      }
+    }
+
   </style>
 </head>
 
@@ -394,8 +496,8 @@
       <div class="container project-detail-content">
         <a class="back-link" href="index.html#projects">← <span class="lang-de">Zurück zu den Projekten</span><span class="lang-en">Back to projects</span></a>
         <p class="section-kicker"><span class="lang-de">Referenzprojekt 2</span><span class="lang-en">Featured Project 2</span></p>
-        <h1 class="project-detail-title"><span class="lang-de">Moderne Gewerbehallen in Putzbrunn bei München</span><span class="lang-en">Additional Commercial Property in the Greater Munich Area</span></h1>
-        <p class="project-detail-subtitle"><span class="lang-de">Ein weiteres Gewerbe-Objekt, das hochwertige Ausführung, flexible Nutzungsmöglichkeiten und langfristige Qualität verbindet.</span><span class="lang-en">Another commercial project combining high-quality construction, flexible use and long-term value.</span></p>
+        <h1 class="project-detail-title"><span class="lang-de">Moderne Gewerbeflächen in Putzbrunn bei München</span><span class="lang-en">Modern Commercial Spaces in Putzbrunn near Munich</span></h1>
+        <p class="project-detail-subtitle"><span class="lang-de">Repräsentative Architektur, flexible Nutzflächen und hochwertige Ausführung für anspruchsvolle gewerbliche Nutzung.</span><span class="lang-en">Representative architecture, flexible usable space and high-quality execution for demanding commercial use.</span></p>
       </div>
     </section>
 
@@ -403,24 +505,46 @@
       <div class="container detail-grid">
         <div class="project-copy">
           <p class="section-kicker"><span class="lang-de">Projektbeschreibung</span><span class="lang-en">Project Overview</span></p>
-          <h2 class="section-title"><span class="lang-de">Gewerbeimmobilie mit klarer Funktion und langfristiger Perspektive.</span><span class="lang-en">Commercial property with clear functionality and long-term perspective.</span></h2>
-          <p><span class="lang-de">Diese Projektseite ist vorbereitet, um ein weiteres realisiertes Gewerbeobjekt von Buhlvest darzustellen.</span></p><p><span class="lang-de">Hier können später Standort, Flächenangaben, Objektbeschreibung, Bildergalerie und besondere Merkmale ergänzt werden.</span></p>
-          <p><span class="lang-en">This project page is prepared to present another completed commercial property by Buhlvest.</span></p><p><span class="lang-en">Location, floor area, property description, image gallery and key features can be added here later.</span></p>
+          <h2 class="section-title"><span class="lang-de">2020 entstanden autarke Gewerbehallen für flexible Nutzungen.</span><span class="lang-en">Completed in 2020, these self-contained commercial units offer flexible usage options.</span></h2>
+          <p><span class="lang-de">Dieses Referenzprojekt steht exemplarisch für den Anspruch von Buhlvest: moderne Gewerbeflächen, klare Architektur und flexible Nutzungsmöglichkeiten in einem starken wirtschaftlichen Umfeld.</span></p><p><span class="lang-de">Der Fokus liegt auf funktionalen Flächen, hochwertiger Ausführung und einer Immobilie, die für unterschiedliche gewerbliche Anforderungen langfristig nutzbar bleibt.</span></p>
+          <p><span class="lang-en">This reference project represents Buhlvest’s core approach: modern commercial space, clear architecture and flexible usage options in a strong economic environment.</span></p><p><span class="lang-en">The focus is on functional areas, high-quality execution and a property designed to remain suitable for a wide range of commercial requirements over the long term.</span></p>
+
+          <div class="usage-grid" aria-label="Flexible Nutzungsmöglichkeiten">
+            <article class="usage-card">
+              <div class="usage-visual">
+                <img src="projekt-2-lagerhalle.jpg" alt="Moderne Gewerbehalle als Lagerfläche" />
+              </div>
+              <div class="usage-content">
+                <h3><span class="lang-de">Lagerhalle</span><span class="lang-en">Warehouse</span></h3>
+                <p><span class="lang-de">Autarke Einheiten schaffen klare Abläufe, eigene Zugänge und flexible Flächen für Lagerung, Logistik und betriebliche Prozesse.</span><span class="lang-en">Self-contained units provide clear workflows, dedicated access and flexible space for storage, logistics and operational processes.</span></p>
+              </div>
+            </article>
+
+            <article class="usage-card">
+              <div class="usage-visual">
+                <img src="projekt-2-bauphase.jpg" alt="Bauphase einer modernen Gewerbehalle" />
+              </div>
+              <div class="usage-content">
+                <h3><span class="lang-de">Showroom</span><span class="lang-en">Showroom</span></h3>
+                <p><span class="lang-de">Die Hallen lassen sich repräsentativ nutzen – ideal für Produktpräsentation, Kundenempfang und eine sichtbare Markeninszenierung.</span><span class="lang-en">The units can be used representatively — ideal for product presentation, client reception and visible brand staging.</span></p>
+              </div>
+            </article>
+
+            <article class="usage-card">
+              <div class="usage-visual">
+                <img src="projekt-2-titel.jpg" alt="Außenansicht einer modernen Gewerbehalle in Putzbrunn bei München" />
+              </div>
+              <div class="usage-content">
+                <h3><span class="lang-de">Büro</span><span class="lang-en">Office</span></h3>
+                <p><span class="lang-de">Bei Bedarf können Büro- und Verwaltungsbereiche integriert werden – funktional getrennt und dennoch direkt am eigenen Standort.</span><span class="lang-en">Office and administrative areas can be integrated where required — functionally separated yet directly connected to the user’s own location.</span></p>
+              </div>
+            </article>
+          </div>
           <div class="project-actions">
             <a class="btn" href="index.html#contact"><span class="lang-de">Kontakt aufnehmen</span><span class="lang-en">Get in touch</span> →</a>
             <a class="btn secondary" href="index.html#projects"><span class="lang-de">Alle Projekte ansehen</span><span class="lang-en">View all projects</span></a>
           </div>
         </div>
-
-        <aside class="facts-card">
-          <p class="section-kicker"><span class="lang-de">Eckdaten</span><span class="lang-en">Key Facts</span></p>
-          <ul class="facts-list">
-            <li><strong><span class="lang-de">Status</span><span class="lang-en">Status</span></strong><span><span class="lang-de">Referenzprojekt</span><span class="lang-en">Reference project</span></span></li>
-            <li><strong><span class="lang-de">Standort</span><span class="lang-en">Location</span></strong><span>Großraum München</span></li>
-            <li><strong><span class="lang-de">Nutzung</span><span class="lang-en">Use</span></strong><span><span class="lang-de">Gewerbeimmobilie</span><span class="lang-en">Commercial property</span></span></li>
-            <li><strong><span class="lang-de">Flächen</span><span class="lang-en">Areas</span></strong><span><span class="lang-de">Angaben folgen</span><span class="lang-en">To be added</span></span></li>
-          </ul>
-        </aside>
       </div>
     </section>
 
