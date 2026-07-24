@@ -408,6 +408,38 @@
       }
     }
 
+  
+    /* Projekt 3 Baustellenbilder */
+    .project-gallery-section {
+      background: var(--navy);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .construction-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .construction-gallery img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: center;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--navy-3);
+      filter: saturate(0.98) contrast(1.02);
+    }
+
+    @media (max-width: 920px) {
+      .construction-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -467,6 +499,19 @@
             <li><strong><span class="lang-de">Flächen</span><span class="lang-en">Areas</span></strong><span><span class="lang-de">Angaben folgen</span><span class="lang-en">To be added</span></span></li>
           </ul>
         </aside>
+      </div>
+    </section>
+
+
+    <section class="project-gallery-section" id="project-images">
+      <div class="container">
+        <p class="section-kicker"><span class="lang-de">Bilder</span><span class="lang-en">Images</span></p>
+        <div class="construction-gallery" aria-label="Baustellenbilder Projekt 3">
+          <img src="projekt-3-baustelle-1.jpg" alt="Luftaufnahme der Baustelle von Projekt 3" />
+          <img src="projekt-3-baustelle-2.jpg" alt="Innenansicht der Baustelle mit Bodenaufbau" />
+          <img src="projekt-3-baustelle-3.jpg" alt="Rohbau der Gewerbehallen von Projekt 3" />
+          <img src="projekt-3-baustelle-4.jpg" alt="Innenansicht der Halle während der Bauphase" />
+        </div>
       </div>
     </section>
 
